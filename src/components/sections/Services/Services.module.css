@@ -23,6 +23,14 @@
     color: var(--color-primary);
 }
 
+.subheading {
+    text-align: center;
+    font-size: 1.25rem;
+    color: var(--color-text-lightbg);
+    margin: -20px auto 20px;
+    max-width: 700px;
+}
+
 .introText {
     max-width: 1200px;
     text-align: center;
@@ -55,7 +63,12 @@
     overflow: hidden;
     text-decoration: none;
     border-bottom: 4px solid transparent;
-    /* default state for the yellow border transition */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
 
 .cardImageWrapper {

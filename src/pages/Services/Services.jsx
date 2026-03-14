@@ -1,10 +1,28 @@
 import React from 'react';
+import Hero from '../../components/sections/Hero/Hero';
+import ServicesSection from '../../components/sections/Services/Services';
+import oilChangeImg from '../../assets/images/oil-change.jpg';
 
 const Services = () => {
     return (
-        <div className="page-container">
-            <h1>Our Services</h1>
-            <p>Waiting for section screenshots to build the content...</p>
+        <div className="services-page">
+            <Hero
+                imageSrc={oilChangeImg}
+                title="Our Services"
+                description="From oil changes and routine servicing to WOF inspections, brake repairs, and full mechanical work—we keep your car, bike, or light truck running safely and reliably."
+                ctaText="Book Your WOF Here"
+                ctaLink="/services/wof"
+            />
+            <ServicesSection
+                title="Complete Car Servicing & Repairs in Christchurch"
+                highlightWord={null}
+                subheading="Looking for a reliable mechanic in Christchurch?"
+                introContent={
+                    <p>
+                        We provide everything from routine vehicle servicing and WOF inspections to complex mechanical repairs and advanced diagnostics. Whether your car needs preventative maintenance or urgent repairs, our experienced team delivers reliable workmanship, transparent pricing, and honest advice.
+                    </p>
+                }
+            />
         </div>
     );
 };
