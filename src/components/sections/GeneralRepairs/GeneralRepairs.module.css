@@ -1,0 +1,97 @@
+.section {
+    padding: 100px 0;
+    background-color: #FFFFFF;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+.textContent {
+    flex: 1;
+    max-width: 550px;
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-heading-lightbg);
+    margin-bottom: 25px;
+}
+
+.description {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--color-text-lightbg);
+    margin-bottom: 20px;
+}
+
+.description:last-of-type {
+    margin-bottom: 32px;
+}
+
+.bookButton {
+    display: inline-block;
+    background-color: var(--color-primary);
+    color: #000000;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 14px 32px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.bookButton:hover {
+    background-color: #d1cc10;
+    transform: translateY(-3px);
+}
+
+.imageContent {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    min-height: 0;
+}
+
+.imageWrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+@media (max-width: 992px) {
+    .container {
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .textContent {
+        max-width: 100%;
+    }
+
+    .imageContent {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .title {
+        font-size: 1.75rem;
+    }
+}

@@ -13,19 +13,20 @@ const defaultContent = {
     ctaLink: '/services',
 };
 
-const Hero = ({ imageSrc, title, description, ctaText, ctaLink }) => {
+const Hero = ({ imageSrc, title, description, ctaText, ctaLink, short: isShort }) => {
     const heroRef = useRef(null);
     const titleRef = useRef(null);
     const textRef = useRef(null);
     const btnRef = useRef(null);
 
-    const hasDescription = description !== undefined && description !== null && description !== '';
-    const hasCta = ctaText !== undefined && ctaText !== null && ctaText !== '';
+    const isDefaultHero = title === undefined;
+    const hasDescription = isDefaultHero || (description !== undefined && description !== null && description !== '');
+    const hasCta = isDefaultHero || (ctaText !== undefined && ctaText !== null && ctaText !== '');
 
     const content = {
         title: title ?? defaultContent.title,
-        description: hasDescription ? description : defaultContent.description,
-        ctaText: hasCta ? ctaText : defaultContent.ctaText,
+        description: description ?? defaultContent.description,
+        ctaText: ctaText ?? defaultContent.ctaText,
         ctaLink: ctaLink ?? defaultContent.ctaLink,
     };
 
@@ -66,7 +67,7 @@ const Hero = ({ imageSrc, title, description, ctaText, ctaLink }) => {
     const titleOnly = !hasDescription && !hasCta;
 
     return (
-        <section className={`${styles.hero} ${titleOnly ? styles.titleOnly : ''}`} ref={heroRef}>
+        <section className={`${styles.hero} ${titleOnly ? styles.titleOnly : ''} ${isShort ? styles.heroShort : ''}`} ref={heroRef}>
             <div
                 className={styles.background}
                 style={imageSrc ? { backgroundImage: `url(${imageSrc})` } : undefined}

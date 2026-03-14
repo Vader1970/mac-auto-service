@@ -38,6 +38,7 @@ const WOF = () => {
             <Hero
                 imageSrc={wofHeroImg}
                 title="Warrant of Fitness (WOF)"
+                short
             />
             <WOFInspections />
             <ServicesThatKeepYouMoving />

@@ -1,10 +1,17 @@
 import React from 'react';
+import Hero from '../../components/sections/Hero/Hero';
+import GeneralRepairs from '../../components/sections/GeneralRepairs/GeneralRepairs';
+import repairsHeroImg from '../../assets/images/mac-repairs.jpg';
 
 const Repairs = () => {
     return (
-        <div className="page-container">
-            <h1>Repairs</h1>
-            <p>Waiting for section screenshots to build the content...</p>
+        <div className="repairs-page">
+            <Hero
+                imageSrc={repairsHeroImg}
+                title="Repairs"
+                short
+            />
+            <GeneralRepairs />
         </div>
     );
 };
