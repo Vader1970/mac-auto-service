@@ -6,23 +6,32 @@ import styles from './Hero.module.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const Hero = () => {
+const defaultContent = {
+    title: 'Warrant of Fitness & Car Repairs in Christchurch',
+    description: 'From Warrant of Fitness inspections and brake repairs to full engine rebuilds, we look after cars, motorbikes, trailers, and light trucks with straightforward advice and dependable service.',
+    ctaText: 'View Our Services',
+    ctaLink: '/services',
+};
+
+const Hero = ({ imageSrc, title, description, ctaText, ctaLink }) => {
     const heroRef = useRef(null);
-    const title1Ref = useRef(null);
-    const title2Ref = useRef(null);
+    const titleRef = useRef(null);
     const textRef = useRef(null);
     const btnRef = useRef(null);
 
+    const content = {
+        title: title ?? defaultContent.title,
+        description: description ?? defaultContent.description,
+        ctaText: ctaText ?? defaultContent.ctaText,
+        ctaLink: ctaLink ?? defaultContent.ctaLink,
+    };
+
     useEffect(() => {
         const ctx = gsap.context(() => {
-            // Hero animations should play immediately on load
             const tl = gsap.timeline();
-
-            // Content reveal sequence
-            tl.fromTo([title1Ref.current, title2Ref.current],
+            tl.fromTo(titleRef.current,
                 { y: 30, opacity: 0 },
-                { y: 0, opacity: 1, duration: 0.8, stagger: 0.15, ease: 'power3.out' },
-                "-=0.5"
+                { y: 0, opacity: 1, duration: 0.8, ease: 'power3.out' }
             )
                 .fromTo(textRef.current,
                     { y: 30, opacity: 0 },
@@ -49,25 +58,28 @@ const Hero = () => {
 
     return (
         <section className={styles.hero} ref={heroRef}>
-            <div className={styles.background}>
+            <div
+                className={styles.background}
+                style={imageSrc ? { backgroundImage: `url(${imageSrc})` } : undefined}
+            >
                 <div className={styles.overlay}></div>
             </div>
             <div className={styles.container}>
                 <div className={styles.content}>
                     <h1 className={styles.title}>
-                        <span ref={title1Ref} className={styles.titleLine}>Warrant of Fitness & Car Repairs in Christchurch</span>
+                        <span ref={titleRef} className={styles.titleLine}>{content.title}</span>
                     </h1>
                     <p className={styles.description} ref={textRef}>
-                        From Warrant of Fitness inspections and brake repairs to full engine rebuilds, we look after cars, motorbikes, trailers, and light trucks with straightforward advice and dependable service.
+                        {content.description}
                     </p>
                     <div ref={btnRef} className={styles.btnWrapper}>
                         <Link
-                            to="/services"
+                            to={content.ctaLink}
                             className={`btn ${styles.ctaBtn}`}
                             onMouseEnter={handleMouseEnter}
                             onMouseLeave={handleMouseLeave}
                         >
-                            View Our Services
+                            {content.ctaText}
                         </Link>
                     </div>
                 </div>
