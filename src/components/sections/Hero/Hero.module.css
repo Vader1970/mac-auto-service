@@ -11,6 +11,13 @@
     /* Offset to keep content balanced */
 }
 
+.heroShort {
+    height: 250px;
+    min-height: 250px;
+    margin-top: 0;
+    padding-top: 0;
+}
+
 /* Background image will be set via inline styles or class but here we use the generated one */
 .background {
     position: absolute;
@@ -45,6 +52,7 @@
 .content {
     max-width: 800px;
     color: var(--color-heading-darkbg);
+    text-align: left;
 }
 
 .titleOnly .content {
@@ -84,6 +92,11 @@
     font-weight: 600;
 }
 
+.heroShort .title {
+    font-size: 2rem;
+    margin-bottom: 0;
+}
+
 @media (max-width: 992px) {
     .title {
         font-size: 3rem;
@@ -97,6 +110,10 @@
 
     .title {
         font-size: 2.25rem;
+    }
+
+    .heroShort .title {
+        font-size: 1.5rem;
     }
 
     .description {
