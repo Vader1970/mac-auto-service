@@ -1,0 +1,84 @@
+.counterSection {
+    background-color: #313131;
+    /* Ensures it is dark and white text pops */
+    padding: 30px 0;
+    color: #FFFFFF;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 40px 20px;
+}
+
+.item {
+    text-align: center;
+    flex: 1;
+    min-width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.numberWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    color: #FFFFFF;
+    margin-bottom: 15px;
+    line-height: 1;
+}
+
+.number {
+    font-size: 52px;
+    font-weight: 700;
+}
+
+.suffix {
+    font-size: 52px;
+    font-weight: 700;
+    margin-left: 2px;
+}
+
+.label {
+    font-size: 1 rem;
+    font-weight: 400;
+    color: #FFFFFF;
+    /* Specifically requested by user */
+    text-transform: capitalize;
+    letter-spacing: 1.5px;
+    margin: 0;
+}
+
+@media (max-width: 900px) {
+    .number {
+        font-size: 42px;
+    }
+
+    .suffix {
+        font-size: 42px;
+    }
+
+    .label {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .counterSection {
+        padding: 60px 0;
+    }
+
+    .item {
+        min-width: 100%;
+    }
+
+    .numberWrapper {
+        margin-bottom: 10px;
+    }
+}

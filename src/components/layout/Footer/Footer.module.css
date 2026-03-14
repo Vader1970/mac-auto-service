@@ -1,0 +1,56 @@
+.footer {
+    background-color: var(--bg-dark);
+    color: var(--color-text-darkbg);
+    padding: 60px 0 20px 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    padding: 0 20px;
+}
+
+.column .logoImage {
+    max-width: 200px;
+    margin-bottom: 20px;
+    height: auto;
+}
+
+.column h4 {
+    color: var(--color-heading-darkbg);
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.column ul {
+    list-style: none;
+}
+
+.column ul li {
+    margin-bottom: 10px;
+}
+
+.column ul li a {
+    color: var(--color-text-darkbg);
+    transition: color 0.3s;
+}
+
+.column ul li a:hover {
+    color: var(--color-primary);
+}
+
+.column p {
+    line-height: 1.8;
+}
+
+.bottom {
+    text-align: center;
+    margin-top: 60px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.9rem;
+    color: var(--color-text-darkbg);
+}

@@ -1,0 +1,15 @@
+:root {
+  --font-primary: 'Roboto', sans-serif;
+  
+  --color-primary: #EFEB14;
+  --color-heading-lightbg: #54595F;
+  --color-heading-darkbg: #FFFFFF;
+  --color-text-lightbg: #7A7A7A;
+  --color-text-darkbg: #CCC9C9;
+  
+  --color-button-bg: #EFEB14;
+  --color-button-text: #000000;
+  
+  --bg-light: #FFFFFF;
+  --bg-dark: #121212;
+}

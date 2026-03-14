@@ -1,0 +1,152 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    padding: 20px 0;
+    z-index: 1000;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.logo a {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-heading-lightbg);
+    display: block;
+}
+
+.logoImage {
+    height: 57px;
+    /* Adjust height based on the logo proportions */
+    width: auto;
+    display: block;
+}
+
+.navDesktop,
+.ctaDesktop {
+    display: flex;
+    align-items: center;
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    align-items: center;
+}
+
+.menu a {
+    font-weight: 500;
+    color: var(--color-heading-lightbg);
+    transition: color 0.3s;
+}
+
+.menu a:hover {
+    color: var(--color-button-bg);
+}
+
+.ctaDesktop a {
+    text-decoration: none;
+}
+
+/* Hamburger Icon */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+    z-index: 1001;
+    /* Above mobile menu */
+}
+
+.hamburger span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: var(--color-heading-lightbg);
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+/* Hamburger Active State (X) */
+.hamburger.active span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+/* Mobile Menu Dropdown */
+.mobileMenu {
+    position: absolute;
+    top: -100vh;
+    /* Start hidden above screen */
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    padding: 2rem 0;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 999;
+}
+
+.mobileMenuList {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.mobileMenuList a {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-heading-lightbg);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.mobileMenuList a:hover {
+    color: var(--color-button-bg);
+}
+
+.mobileCta {
+    margin-top: 1rem;
+}
+
+@media (max-width: 900px) {
+
+    .navDesktop,
+    .ctaDesktop {
+        display: none;
+    }
+
+    .container {
+        padding-left: 20px;
+        padding-right: 24px;
+    }
+
+    .hamburger {
+        display: flex;
+        padding-left: 12px;
+    }
+}

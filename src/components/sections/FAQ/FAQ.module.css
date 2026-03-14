@@ -1,0 +1,131 @@
+.faqSection {
+    padding: 100px 0;
+    background-color: #FFFFFF;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+.textContent {
+    flex: 1;
+    max-width: 400px;
+    position: sticky;
+    top: 120px;
+}
+
+.title {
+    font-size: 2.75rem;
+    font-weight: 700;
+    color: var(--color-heading-lightbg);
+    margin-bottom: 25px;
+}
+
+.description {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--color-text-lightbg);
+}
+
+.faqListContainer {
+    flex: 2;
+    min-width: min(650px, 100%);
+}
+
+.faqList {
+    display: flex;
+    flex-direction: column;
+}
+
+.accordionItem {
+    margin-bottom: 2px;
+    /* Slight gap mimicking reference images */
+}
+
+.accordionHeader {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: #F8F8F8;
+    padding: 22px 25px;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    color: var(--color-heading-lightbg);
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.accordionHeader:hover {
+    background-color: var(--color-heading-lightbg);
+    color: #FFFFFF;
+}
+
+.open .accordionHeader {
+    background-color: var(--color-heading-lightbg);
+    color: #FFFFFF;
+}
+
+.accordionIconLeft {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-right: 20px;
+    width: 20px;
+    text-align: center;
+    line-height: 1;
+}
+
+.questionText {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.accordionIconRight {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.accordionIconRight svg {
+    transition: transform 0.3s ease;
+}
+
+.accordionContent {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    background-color: #FFFFFF;
+}
+
+.accordionInner {
+    padding: 30px 25px 30px 65px;
+    /* Indent to match text alignment */
+    color: var(--color-text-lightbg);
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+/* Switch to column before row layout would overflow (400 + 60 + 650 + padding) */
+@media (max-width: 1150px) {
+    .container {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .textContent {
+        position: static;
+        max-width: 100%;
+    }
+
+    .faqListContainer {
+        min-width: 0;
+        width: 100%;
+    }
+}

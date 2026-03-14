@@ -1,0 +1,98 @@
+.testimonialsSection {
+    background-color: #313131;
+    /* Matches dark counter background */
+    padding: 100px 0;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 60px;
+    color: #FFFFFF;
+}
+
+.highlight {
+    color: var(--color-primary);
+}
+
+.slider {
+    position: relative;
+    width: 100%;
+    min-height: 120px;
+    /* Keep container height stable */
+    display: flex;
+    justify-content: center;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.activeSlide {
+    opacity: 1;
+    pointer-events: auto;
+    position: relative;
+    /* Reverts absolute so the active slide gives height to parent */
+}
+
+.quote {
+    font-size: 1.15rem;
+    color: #E2E2E2;
+    margin-bottom: 25px;
+    max-width: 700px;
+    line-height: 1.6;
+}
+
+.author {
+    font-size: 1rem;
+    color: #8C8C8C;
+}
+
+.dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #555555;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: background-color 0.3s ease;
+}
+
+.activeDot {
+    background-color: var(--color-primary);
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 2rem;
+    }
+
+    .quote {
+        font-size: 1rem;
+    }
+}
