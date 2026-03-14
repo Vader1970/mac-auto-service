@@ -19,10 +19,13 @@ const Hero = ({ imageSrc, title, description, ctaText, ctaLink }) => {
     const textRef = useRef(null);
     const btnRef = useRef(null);
 
+    const hasDescription = description !== undefined && description !== null && description !== '';
+    const hasCta = ctaText !== undefined && ctaText !== null && ctaText !== '';
+
     const content = {
         title: title ?? defaultContent.title,
-        description: description ?? defaultContent.description,
-        ctaText: ctaText ?? defaultContent.ctaText,
+        description: hasDescription ? description : defaultContent.description,
+        ctaText: hasCta ? ctaText : defaultContent.ctaText,
         ctaLink: ctaLink ?? defaultContent.ctaLink,
     };
 
@@ -32,21 +35,25 @@ const Hero = ({ imageSrc, title, description, ctaText, ctaLink }) => {
             tl.fromTo(titleRef.current,
                 { y: 30, opacity: 0 },
                 { y: 0, opacity: 1, duration: 0.8, ease: 'power3.out' }
-            )
-                .fromTo(textRef.current,
+            );
+            if (hasDescription && textRef.current) {
+                tl.fromTo(textRef.current,
                     { y: 30, opacity: 0 },
                     { y: 0, opacity: 1, duration: 0.8, ease: 'power3.out' },
                     "-=0.6"
-                )
-                .fromTo(btnRef.current,
+                );
+            }
+            if (hasCta && btnRef.current) {
+                tl.fromTo(btnRef.current,
                     { opacity: 0, y: 20 },
                     { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out' },
                     "-=0.5"
                 );
+            }
         }, heroRef);
 
         return () => ctx.revert();
-    }, []);
+    }, [hasDescription, hasCta]);
 
     const handleMouseEnter = () => {
         gsap.to(btnRef.current, { y: -2, scale: 1.02, duration: 0.2, ease: 'power1.inOut' });
@@ -56,8 +63,10 @@ const Hero = ({ imageSrc, title, description, ctaText, ctaLink }) => {
         gsap.to(btnRef.current, { y: 0, scale: 1, duration: 0.2, ease: 'power1.inOut' });
     };
 
+    const titleOnly = !hasDescription && !hasCta;
+
     return (
-        <section className={styles.hero} ref={heroRef}>
+        <section className={`${styles.hero} ${titleOnly ? styles.titleOnly : ''}`} ref={heroRef}>
             <div
                 className={styles.background}
                 style={imageSrc ? { backgroundImage: `url(${imageSrc})` } : undefined}
@@ -69,19 +78,23 @@ const Hero = ({ imageSrc, title, description, ctaText, ctaLink }) => {
                     <h1 className={styles.title}>
                         <span ref={titleRef} className={styles.titleLine}>{content.title}</span>
                     </h1>
-                    <p className={styles.description} ref={textRef}>
-                        {content.description}
-                    </p>
-                    <div ref={btnRef} className={styles.btnWrapper}>
-                        <Link
-                            to={content.ctaLink}
-                            className={`btn ${styles.ctaBtn}`}
-                            onMouseEnter={handleMouseEnter}
-                            onMouseLeave={handleMouseLeave}
-                        >
-                            {content.ctaText}
-                        </Link>
-                    </div>
+                    {hasDescription && (
+                        <p className={styles.description} ref={textRef}>
+                            {content.description}
+                        </p>
+                    )}
+                    {hasCta && (
+                        <div ref={btnRef} className={styles.btnWrapper}>
+                            <Link
+                                to={content.ctaLink}
+                                className={`btn ${styles.ctaBtn}`}
+                                onMouseEnter={handleMouseEnter}
+                                onMouseLeave={handleMouseLeave}
+                            >
+                                {content.ctaText}
+                            </Link>
+                        </div>
+                    )}
                 </div>
             </div>
         </section>

@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/layout/Navbar/Navbar';
 import Footer from './components/layout/Footer/Footer';
+import ScrollToTop from './components/layout/ScrollToTop/ScrollToTop';
 import Home from './pages/Home/Home';
 import About from './pages/About/About';
 import Contact from './pages/Contact/Contact';
@@ -13,6 +14,7 @@ import Servicing from './pages/Servicing/Servicing';
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Navbar />
       <main style={{ paddingTop: '80px', minHeight: 'calc(100vh - 200px)' }}>
         <Routes>
