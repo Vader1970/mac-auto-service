@@ -1,11 +1,11 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useLayoutEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import styles from './FAQ.module.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const faqs = [
+const defaultFaqs = [
     {
         question: "What services does your mechanic workshop provide?",
         answer: "We offer a full range of automotive services, including Warrant of Fitness (WOF) inspections, routine servicing, brake repairs, engine diagnostics, mechanical repairs, and pre-purchase inspections for cars, motorbikes, trailers, and light trucks."
@@ -54,6 +54,15 @@ const faqs = [
 
 const FAQItem = ({ faq, isOpen, onClick }) => {
     const contentRef = useRef(null);
+    const [contentHeight, setContentHeight] = useState(0);
+
+    useLayoutEffect(() => {
+        if (isOpen && contentRef.current) {
+            setContentHeight(contentRef.current.scrollHeight);
+        } else {
+            setContentHeight(0);
+        }
+    }, [isOpen, faq.answer]);
 
     return (
         <div className={`${styles.accordionItem} ${isOpen ? styles.open : ''}`}>
@@ -70,10 +79,9 @@ const FAQItem = ({ faq, isOpen, onClick }) => {
             </button>
             <div
                 className={styles.accordionContent}
-                ref={contentRef}
-                style={{ maxHeight: isOpen ? `${contentRef.current?.scrollHeight}px` : '0px' }}
+                style={{ maxHeight: contentHeight }}
             >
-                <div className={styles.accordionInner}>
+                <div className={styles.accordionInner} ref={contentRef}>
                     <p>{faq.answer}</p>
                 </div>
             </div>
@@ -81,8 +89,12 @@ const FAQItem = ({ faq, isOpen, onClick }) => {
     );
 };
 
-const FAQ = () => {
-    const [openIndex, setOpenIndex] = useState(null); // All closed by default
+const FAQ = ({
+    title = "FAQ's",
+    description = "Find answers to common questions about WOF inspections, servicing, and vehicle repairs. If you need more information, our friendly team is always happy to help.",
+    faqs = defaultFaqs
+}) => {
+    const [openIndex, setOpenIndex] = useState(null);
     const sectionRef = useRef(null);
     const titleRef = useRef(null);
     const listRef = useRef(null);
@@ -111,10 +123,8 @@ const FAQ = () => {
         <section className={styles.faqSection} ref={sectionRef}>
             <div className={styles.container}>
                 <div className={styles.textContent} ref={titleRef}>
-                    <h2 className={styles.title}>FAQ's</h2>
-                    <p className={styles.description}>
-                        Find answers to common questions about WOF inspections, servicing, and vehicle repairs. If you need more information, our friendly team is always happy to help.
-                    </p>
+                    <h2 className={styles.title}>{title}</h2>
+                    <p className={styles.description}>{description}</p>
                 </div>
 
                 <div className={styles.faqListContainer}>

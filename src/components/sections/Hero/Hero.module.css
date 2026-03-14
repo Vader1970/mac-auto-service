@@ -47,6 +47,11 @@
     color: var(--color-heading-darkbg);
 }
 
+.titleOnly .content {
+    text-align: center;
+    margin: 0 auto;
+}
+
 .title {
     font-size: 3.5rem;
     line-height: 1.2;
