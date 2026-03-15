@@ -15,19 +15,7 @@ const RepairsCTA = () => {
 
     useEffect(() => {
         const ctx = gsap.context(() => {
-            gsap.fromTo(bgRef.current,
-                { yPercent: -20 },
-                {
-                    yPercent: 20,
-                    ease: "none",
-                    scrollTrigger: {
-                        trigger: sectionRef.current,
-                        start: "top bottom",
-                        end: "bottom top",
-                        scrub: true
-                    }
-                }
-            );
+            // Parallax effect removed, handled by CSS on section
 
             gsap.fromTo(contentRef.current.children,
                 { y: 30, opacity: 0 },
@@ -49,11 +37,9 @@ const RepairsCTA = () => {
     }, []);
 
     return (
-        <section className={styles.section} ref={sectionRef}>
-            <div className={styles.bgContainer}>
-                <img src={bgImg} alt="Engine repair" className={styles.bgImage} ref={bgRef} />
-                <div className={styles.overlay}></div>
-            </div>
+        <section className={styles.section} style={{ backgroundImage: `url(${bgImg})` }} ref={sectionRef}>
+            <div className={styles.overlay}></div>
+
 
             <div className={styles.container} ref={contentRef}>
                 <h2 className={styles.title}>Quality Repairs. Trusted Mechanics.</h2>

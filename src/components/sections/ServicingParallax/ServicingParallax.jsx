@@ -10,24 +10,12 @@ gsap.registerPlugin(ScrollTrigger);
 
 const ServicingParallax = () => {
     const sectionRef = useRef(null);
-    const bgRef = useRef(null);
+    // const bgRef = useRef(null);
     const contentRef = useRef(null);
 
     useEffect(() => {
         const ctx = gsap.context(() => {
-            gsap.fromTo(bgRef.current,
-                { yPercent: -12 },
-                {
-                    yPercent: 12,
-                    ease: "none",
-                    scrollTrigger: {
-                        trigger: sectionRef.current,
-                        start: "top bottom",
-                        end: "bottom top",
-                        scrub: true
-                    }
-                }
-            );
+            // Parallax effect removed, handled by CSS on section
 
             gsap.fromTo(contentRef.current.children,
                 { y: 30, opacity: 0 },
@@ -61,11 +49,9 @@ const ServicingParallax = () => {
     }, []);
 
     return (
-        <section className={styles.section} ref={sectionRef}>
-            <div className={styles.bgContainer}>
-                <img src={bgImg} alt="Trust and reliability" className={styles.bgImage} ref={bgRef} />
-                <div className={styles.overlay}></div>
-            </div>
+        <section className={styles.section} style={{ backgroundImage: `url(${bgImg})` }} ref={sectionRef}>
+            <div className={styles.overlay}></div>
+
 
             <div className={styles.container} ref={contentRef}>
                 <h2 className={styles.title}>Trusted Servicing. Peace of Mind.</h2>

@@ -149,4 +149,128 @@
         display: flex;
         padding-left: 12px;
     }
+
+    .mobileDropdownContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .mobileDropdownToggle {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: var(--color-heading-lightbg);
+        cursor: pointer;
+        transition: color 0.3s;
+    }
+
+    .mobileDropdownToggle:hover {
+        color: var(--color-button-bg);
+    }
+
+    .mobileDropdownArrow {
+        display: flex;
+        align-items: center;
+        transition: transform 0.3s ease;
+    }
+
+    .mobileDropdownArrow.open {
+        transform: rotate(180deg);
+    }
+
+    .mobileSubItemsWrapper {
+        display: grid;
+        grid-template-rows: 0fr;
+        transition: grid-template-rows 0.3s ease;
+        width: 100%;
+    }
+
+    .mobileSubItemsWrapper.open {
+        grid-template-rows: 1fr;
+    }
+
+    .mobileSubItemsList {
+        overflow: hidden;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        padding: 0;
+        margin: 0;
+    }
+
+    .mobileSubItemsList > li:first-child {
+        margin-top: 1rem;
+    }
+
+    .mobileSubItemsList > li:last-child {
+        margin-bottom: 0.5rem;
+    }
+
+    .mobileSubItemsList a {
+        font-size: 1.1rem;
+        font-weight: 500;
+        color: #555;
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+
+    .mobileSubItemsList a:hover {
+        color: var(--color-button-bg);
+    }
+}
+
+/* Dropdown Container */
+.dropdownContainer {
+    position: relative;
+    padding: 10px 0; /* Increase hover area slightly */
+}
+
+/* Dropdown Menu */
+.dropdownMenu {
+    position: absolute;
+    top: 100%;
+    left: -15px; /* Slight offset to align with text */
+    min-width: 180px;
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0;
+    border-radius: 8px;
+    border: 1px solid rgba(0,0,0,0.05);
+
+    /* Animation initial state */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(15px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+}
+
+/* Show Dropdown on Hover */
+.dropdownContainer:hover .dropdownMenu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Dropdown Links */
+.dropdownMenu a {
+    padding: 10px 20px;
+    display: block;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--color-heading-lightbg);
+    transition: color 0.3s ease, background-color 0.3s ease, padding-left 0.3s ease;
+}
+
+.dropdownMenu a:hover {
+    color: var(--color-button-bg);
+    background-color: #f9f9f9;
+    padding-left: 25px; /* Nice hover animation */
 }

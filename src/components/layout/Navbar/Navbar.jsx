@@ -6,6 +6,7 @@ import logoImg from '../../../assets/images/logo-mac-auto-services.png';
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
     const navbarRef = useRef(null);
     const mobileMenuRef = useRef(null);
     const lastScrollY = useRef(0);
@@ -70,7 +71,10 @@ const Navbar = () => {
             visibility: 'hidden',
             duration: 0.5,
             ease: 'power3.in',
-            onComplete: () => setIsMenuOpen(false)
+            onComplete: () => {
+                setIsMenuOpen(false);
+                setIsMobileServicesOpen(false);
+            }
         });
     }, [location]);
 
@@ -86,7 +90,14 @@ const Navbar = () => {
                 {/* Desktop Nav */}
                 <nav className={styles.navDesktop}>
                     <ul className={styles.menu}>
-                        <li><Link to="/services">Services</Link></li>
+                        <li className={styles.dropdownContainer}>
+                            <Link to="/services">Services</Link>
+                            <div className={styles.dropdownMenu}>
+                                <Link to="/services/wof">WOF</Link>
+                                <Link to="/services/repairs">Repairs</Link>
+                                <Link to="/services/servicing">Servicing</Link>
+                            </div>
+                        </li>
                         <li><Link to="/about">About</Link></li>
                         <li><Link to="/contact">Contact Us</Link></li>
                     </ul>
@@ -107,7 +118,26 @@ const Navbar = () => {
             <div className={styles.mobileMenu} ref={mobileMenuRef}>
                 <ul className={styles.mobileMenuList}>
                     <li><Link to="/">Home</Link></li>
-                    <li><Link to="/services">Services</Link></li>
+                    <li className={styles.mobileDropdownContainer}>
+                        <div 
+                            className={styles.mobileDropdownToggle} 
+                            onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
+                        >
+                            <span>Services</span>
+                            <span className={`${styles.mobileDropdownArrow} ${isMobileServicesOpen ? styles.open : ''}`}>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                    <polyline points="6 9 12 15 18 9"></polyline>
+                                </svg>
+                            </span>
+                        </div>
+                        <div className={`${styles.mobileSubItemsWrapper} ${isMobileServicesOpen ? styles.open : ''}`}>
+                            <ul className={styles.mobileSubItemsList}>
+                                <li><Link to="/services/wof">WOF</Link></li>
+                                <li><Link to="/services/repairs">Repairs</Link></li>
+                                <li><Link to="/services/servicing">Servicing</Link></li>
+                            </ul>
+                        </div>
+                    </li>
                     <li><Link to="/about">About</Link></li>
                     <li><Link to="/contact">Contact Us</Link></li>
                     <li className={styles.mobileCta}>
