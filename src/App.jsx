@@ -16,7 +16,7 @@ function App() {
     <Router>
       <ScrollToTop />
       <Navbar />
-      <main style={{ paddingTop: '80px', minHeight: 'calc(100vh - 200px)' }}>
+      <main className="main-layout">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />

@@ -13,7 +13,7 @@ const defaultContent = {
     ctaLink: '/services',
 };
 
-const Hero = ({ imageSrc, title, description, ctaText, ctaLink, short: isShort }) => {
+const Hero = ({ imageSrc, title, description, ctaText, ctaLink, short: isShort, backgroundPositionMobile }) => {
     const heroRef = useRef(null);
     const titleRef = useRef(null);
     const textRef = useRef(null);
@@ -67,7 +67,7 @@ const Hero = ({ imageSrc, title, description, ctaText, ctaLink, short: isShort }
     const titleOnly = !hasDescription && !hasCta;
 
     return (
-        <section className={`${styles.hero} ${titleOnly ? styles.titleOnly : ''} ${isShort ? styles.heroShort : ''}`} ref={heroRef}>
+        <section className={`${styles.hero} ${titleOnly ? styles.titleOnly : ''} ${isShort ? styles.heroShort : ''} ${backgroundPositionMobile === 'right' ? styles.bgRightMobile : ''}`} ref={heroRef}>
             <div
                 className={styles.background}
                 style={imageSrc ? { backgroundImage: `url(${imageSrc})` } : undefined}
