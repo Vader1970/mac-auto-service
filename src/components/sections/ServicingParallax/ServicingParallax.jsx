@@ -39,13 +39,25 @@ const ServicingParallax = () => {
                     ease: "power3.out",
                     scrollTrigger: {
                         trigger: sectionRef.current,
-                        start: "top 80%"
+                        start: "top bottom"
                     }
                 }
             );
         }, sectionRef);
 
-        return () => ctx.revert();
+        const refreshScrollTrigger = () => ScrollTrigger.refresh();
+        const t1 = setTimeout(refreshScrollTrigger, 100);
+        const t2 = setTimeout(refreshScrollTrigger, 500);
+        window.addEventListener("resize", refreshScrollTrigger);
+        window.addEventListener("orientationchange", refreshScrollTrigger);
+
+        return () => {
+            ctx.revert();
+            clearTimeout(t1);
+            clearTimeout(t2);
+            window.removeEventListener("resize", refreshScrollTrigger);
+            window.removeEventListener("orientationchange", refreshScrollTrigger);
+        };
     }, []);
 
     return (
