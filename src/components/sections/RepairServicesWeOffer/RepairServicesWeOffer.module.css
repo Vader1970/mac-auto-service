@@ -1,0 +1,249 @@
+.section {
+    padding: 100px 0;
+    /* Changed top padding to 0 */
+    background-color: #FFFFFF;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+/* =========================================
+   Left Column (Accordion)
+   ========================================= */
+.leftColumn {
+    flex: 1.2;
+    min-width: min(550px, 100%);
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-heading-lightbg);
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.description {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--color-text-lightbg);
+    margin-bottom: 40px;
+}
+
+.accordionList {
+    display: flex;
+    flex-direction: column;
+}
+
+.accordionItem {
+    margin-bottom: 2px;
+}
+
+.accordionHeader {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: #F8F8F8;
+    padding: 22px 25px;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    color: var(--color-heading-lightbg);
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.accordionHeader:hover {
+    background-color: var(--color-heading-lightbg);
+    color: #FFFFFF;
+}
+
+.open .accordionHeader {
+    background-color: var(--color-heading-lightbg);
+    color: #FFFFFF;
+}
+
+.accordionIconLeft {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-right: 20px;
+    width: 20px;
+    text-align: center;
+    line-height: 1;
+}
+
+.questionText {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.accordionIconRight {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.accordionIconRight svg {
+    transition: transform 0.3s ease;
+}
+
+.accordionContent {
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    background-color: #FFFFFF;
+}
+
+.accordionInner {
+    padding: 30px 25px 30px 10px;
+    color: var(--color-text-lightbg);
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+.richContent p {
+    margin-bottom: 20px;
+}
+
+.richContent p:last-child {
+    margin-bottom: 0;
+}
+
+.richContent ul {
+    margin-bottom: 20px;
+    padding-left: 20px;
+    list-style-type: disc;
+}
+
+.richContent li {
+    margin-bottom: 5px;
+}
+
+.bookButton {
+    display: inline-block;
+    background-color: var(--color-primary);
+    color: #000000;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 14px 32px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 15px;
+    /* Added spacing above the button */
+}
+
+.bookButton:hover {
+    background-color: #d1cc10;
+    transform: translateY(-3px);
+}
+
+/* =========================================
+   Right Column (Features Timeline)
+   ========================================= */
+.rightColumn {
+    flex: 0.8;
+    padding-top: 180px;
+    /* Offset to align with content on the left */
+}
+
+.featuresTimeline {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.featureItem {
+    display: flex;
+    align-items: flex-start;
+    gap: 25px;
+}
+
+.featureIconContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    height: 100%;
+}
+
+.featureIcon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #EFEB14;
+    /* Dark blue from standard palette */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    z-index: 2;
+}
+
+.timelineLine {
+    position: absolute;
+    top: 50px;
+    bottom: -40px;
+    /* Stretch to next item's gap */
+    width: 1px;
+    background-color: #E0E0E0;
+    z-index: 1;
+}
+
+.featureTextContent {
+    padding-top: 5px;
+    /* Align text with center of icon */
+}
+
+.featureTitle {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color-heading-lightbg);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.featureDescription {
+    font-size: 0.95rem;
+    color: var(--color-text-lightbg);
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* =========================================
+   Responsive Design
+   ========================================= */
+@media (max-width: 992px) {
+    .section {
+        padding: 0 0 100px 0;
+    }
+
+    .container {
+        flex-direction: column;
+        gap: 60px;
+    }
+
+    .leftColumn {
+        min-width: 0;
+        width: 100%;
+    }
+
+    .rightColumn {
+        width: 100%;
+        padding-top: 0;
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+}

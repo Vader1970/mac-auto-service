@@ -4,7 +4,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import styles from './ServicesThatKeepYouMoving.module.css';
 
-import bgImg from '../../../assets/images/inside-workshop-crop.jpg';
+import bgImg from '../../../assets/images/wof-parallax.jpg';
 
 gsap.registerPlugin(ScrollTrigger);
 

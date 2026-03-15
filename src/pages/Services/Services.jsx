@@ -1,7 +1,7 @@
 import React from 'react';
 import Hero from '../../components/sections/Hero/Hero';
 import ServicesSection from '../../components/sections/Services/Services';
-import oilChangeImg from '../../assets/images/oil-change.jpg';
+import oilChangeImg from '../../assets/images/services-hero.jpg';
 
 const Services = () => {
     return (

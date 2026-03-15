@@ -3,7 +3,7 @@ import Hero from '../../components/sections/Hero/Hero';
 import WOFInspections from '../../components/sections/WOFInspections/WOFInspections';
 import ServicesThatKeepYouMoving from '../../components/sections/ServicesThatKeepYouMoving/ServicesThatKeepYouMoving';
 import FAQ from '../../components/sections/FAQ/FAQ';
-import wofHeroImg from '../../assets/images/hero.png';
+import wofHeroImg from '../../assets/images/wof-hero.jpg';
 
 const wofFaqs = [
     {

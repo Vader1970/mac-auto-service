@@ -1,7 +1,8 @@
 import React from 'react';
 import Hero from '../../components/sections/Hero/Hero';
 import GeneralRepairs from '../../components/sections/GeneralRepairs/GeneralRepairs';
-import repairsHeroImg from '../../assets/images/mac-repairs.jpg';
+import RepairServicesWeOffer from '../../components/sections/RepairServicesWeOffer/RepairServicesWeOffer';
+import repairsHeroImg from '../../assets/images/repairs-hero.webp';
 
 const Repairs = () => {
     return (
@@ -12,6 +13,7 @@ const Repairs = () => {
                 short
             />
             <GeneralRepairs />
+            <RepairServicesWeOffer />
         </div>
     );
 };

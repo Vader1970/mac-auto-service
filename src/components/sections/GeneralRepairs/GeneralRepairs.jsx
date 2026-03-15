@@ -4,7 +4,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import styles from './GeneralRepairs.module.css';
 
-import repairsSectionImg from '../../../assets/images/chris.png';
+import repairsSectionImg from '../../../assets/images/car-trouble.webp';
 
 gsap.registerPlugin(ScrollTrigger);
 
