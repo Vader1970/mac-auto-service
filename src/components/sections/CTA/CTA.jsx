@@ -14,20 +14,7 @@ const CTA = () => {
 
     useEffect(() => {
         const ctx = gsap.context(() => {
-            // Parallax effect on the background image
-            gsap.fromTo(bgRef.current,
-                { yPercent: -20 },
-                {
-                    yPercent: 20,
-                    ease: "none",
-                    scrollTrigger: {
-                        trigger: sectionRef.current,
-                        start: "top bottom",
-                        end: "bottom top",
-                        scrub: true
-                    }
-                }
-            );
+            // Parallax effect removed, handled by CSS on section
 
             // Fade up effect for the textual content inside
             gsap.fromTo(contentRef.current.children,
@@ -50,11 +37,9 @@ const CTA = () => {
     }, []);
 
     return (
-        <section className={styles.ctaSection} ref={sectionRef}>
-            <div className={styles.bgContainer}>
-                <img src={bgImg} alt="Workshop Background" className={styles.bgImage} ref={bgRef} />
-                <div className={styles.overlay}></div>
-            </div>
+        <section className={styles.ctaSection} style={{ backgroundImage: `url(${bgImg})` }} ref={sectionRef}>
+            <div className={styles.overlay}></div>
+
 
             <div className={styles.container} ref={contentRef}>
                 <h2 className={styles.title}>Need a WOF or Service?</h2>
