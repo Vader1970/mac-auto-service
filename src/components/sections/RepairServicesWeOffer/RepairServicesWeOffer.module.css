@@ -1,6 +1,5 @@
 .section {
     padding: 100px 0;
-    /* Changed top padding to 0 */
     background-color: #FFFFFF;
 }
 
@@ -224,10 +223,6 @@
    Responsive Design
    ========================================= */
 @media (max-width: 992px) {
-    .section {
-        padding: 0 0 100px 0;
-    }
-
     .container {
         flex-direction: column;
         gap: 60px;
