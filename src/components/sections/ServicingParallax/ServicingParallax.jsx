@@ -16,9 +16,9 @@ const ServicingParallax = () => {
     useEffect(() => {
         const ctx = gsap.context(() => {
             gsap.fromTo(bgRef.current,
-                { yPercent: -20 },
+                { yPercent: -12 },
                 {
-                    yPercent: 20,
+                    yPercent: 12,
                     ease: "none",
                     scrollTrigger: {
                         trigger: sectionRef.current,
