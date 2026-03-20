@@ -143,25 +143,6 @@ const servicesList = [
         )
     },
     {
-        title: "Automotive Electrical Repairs",
-        description: (
-            <div className={styles.richContent}>
-                <p>Electrical issues can show up as flat batteries, slow cranking, dead lights, or accessories that work only sometimes. Guessing and swapping parts can get expensive.</p>
-                <p>Mac Auto Services uses electrical testing gear to track down faults in the starting, charging, and lighting systems, as well as interior electrics. We then repair or replace the faulty parts.</p>
-                <p>Our electrical repair services include:</p>
-                <ul>
-                    <li>Battery testing, charging system checks, and replacement</li>
-                    <li>Starter motor and alternator diagnosis and repairs</li>
-                    <li>Headlight, tail light, and indicator repairs</li>
-                    <li>Power window, central locking, and accessory repairs</li>
-                    <li>Wiring and connector inspection and repairs</li>
-                </ul>
-                <p>Whether it&apos;s a no - start problem or an annoying intermittent fault, we&apos;ll find the cause and fix it properly. Book your electrical check today and get your car starting and running reliably again.</p>
-                <Link to="/contact" className={styles.bookButton}>Book Your Electrical Repairs Today</Link>
-            </div>
-        )
-    },
-    {
         title: "Tyre Replacement & Wheel Services",
         description: (
             <div className={styles.richContent}>
@@ -175,7 +156,7 @@ const servicesList = [
                     <li>Wheel alignment checks and adjustments</li>
                     <li>Tyre rotation and tread wear checks</li>
                 </ul>
-                <p>Whether it&apos;s a no - start problem or an annoying intermittent fault, we&apos;ll find the cause and fix it properly. Book your electrical check today and get your car starting and running reliably again.</p>
+                <p>Whether you need one tyre or a full set and balancing, we'll help your car handle and stop safely in all conditions. Book your tyre and wheel service today and stay safe on the road.</p>
                 <Link to="/contact" className={styles.bookButton}>Book Your Tyre & Wheel Services Today</Link>
             </div>
         )

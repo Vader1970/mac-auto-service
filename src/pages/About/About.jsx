@@ -1,5 +1,6 @@
 import React from 'react';
 import Hero from '../../components/sections/Hero/Hero';
+import AfterpayBanner from '../../components/sections/AfterpayBanner/AfterpayBanner';
 
 const About = () => {
     return (
@@ -10,6 +11,7 @@ const About = () => {
                 ctaText="Get in Touch"
                 ctaLink="/contact"
             />
+            <AfterpayBanner />
             <div className="page-container" style={{ padding: '60px 20px', maxWidth: 1200, margin: '0 auto' }}>
                 <p>Waiting for section screenshots to build the content...</p>
             </div>

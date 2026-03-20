@@ -152,7 +152,15 @@ const ContactUs = () => {
                         <h3 className={styles.cardTitle}>Contact Us</h3>
                         <div className={styles.yellowDivider}></div>
                         <p className={styles.contactInfo}>(03) 925 9349</p>
-                        <p className={styles.contactInfo}>mac.autoservices@hotmail.com</p>
+                        <p className={styles.cardText}>mac.autoservices@hotmail.com</p>
+
+                        <h3 className={styles.cardTitle}>Address</h3>
+                        <div className={styles.yellowDivider}></div>
+                        <p className={styles.contactInfo}>Unit 1&2/56 Wickham Street,</p>
+                        <p className={styles.contactInfo}>Christchurch 8062,</p>
+                        <p className={styles.contactInfo}>Bromley</p>
+
+                    
                     </div>
                 </div>
 

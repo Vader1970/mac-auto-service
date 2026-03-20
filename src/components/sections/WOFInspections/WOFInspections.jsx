@@ -56,19 +56,19 @@ const WOFInspections = () => {
                     <h2 className={styles.title}>Warrant of Fitness (WOF) Inspections</h2>
 
                     <p className={styles.description}>
-                        A Warrant of Fitness (WOF) is a legally required safety inspection that ensures your vehicle meets New Zealand road safety standards. Vehicles registered before 1 January 2000 need a WOF every six months; those registered after need one every twelve months. Keeping your WOF up to date is essential for your safety and legal compliance.
+                    A Warrant of Fitness (WOF) is a legally required safety inspection that ensures your vehicle meets New Zealand road safety standards. Vehicles first registered before 1 January 2000 generally require a WOF every six months, while vehicles registered after that date require inspection every twelve months. Staying up to date with your WOF helps keep you, your passengers, and other road users safe.
                     </p>
 
                     <p className={styles.description}>
-                        Our qualified inspectors carry out thorough checks in line with NZTA guidelines. We examine brakes, tyres, steering, suspension, lights, seatbelts, and structural integrity, among other safety components. You'll receive clear communication about the condition of your vehicle and any work required.
+                    Our qualified inspectors carry out thorough WOF inspections in line with NZTA guidelines, checking critical safety components such as brakes, tyres, steering, suspension, lights, seatbelts, and structural integrity. We focus on clear communication, explaining any issues in plain language so you understand exactly what needs attention.
                     </p>
 
                     <p className={styles.description}>
-                        If repairs are needed to pass your WOF, our experienced mechanics can complete most work on-site quickly and efficiently. We'll then recheck your vehicle and issue your WOF without delay once it meets the standard.
+                    If your vehicle requires repairs to pass its WOF inspection, our experienced mechanics can complete most work onsite quickly and efficiently. Once repairs are completed, we'll recheck the vehicle and issue your Warrant of Fitness without unnecessary delays, helping you get back on the road with confidence.
                     </p>
 
                     <p className={styles.description}>
-                        For specialist repairs such as windscreen replacement or panel work, we can recommend trusted local providers and coordinate the process so your vehicle is compliant and back on the road as smoothly as possible.
+                    In cases where specialist repairs are required — such as windscreen replacement or panel work — we can recommend trusted local providers and help coordinate the process to ensure your vehicle meets compliance standards as smoothly as possible.
                     </p>
 
                     <Link to="/contact" className={styles.bookButton}>Book Your WOF Today</Link>

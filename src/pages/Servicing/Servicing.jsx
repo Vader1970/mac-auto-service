@@ -1,5 +1,6 @@
 import React from 'react';
 import Hero from '../../components/sections/Hero/Hero';
+import AfterpayBanner from '../../components/sections/AfterpayBanner/AfterpayBanner';
 import ServicingIntro from '../../components/sections/ServicingIntro/ServicingIntro';
 import ServicingParallax from '../../components/sections/ServicingParallax/ServicingParallax';
 import FAQ from '../../components/sections/FAQ/FAQ';
@@ -36,6 +37,7 @@ const Servicing = () => {
                 title="Servicing"
                 short
             />
+            <AfterpayBanner />
             <ServicingIntro />
             <ServicingParallax />
             <FAQ 
