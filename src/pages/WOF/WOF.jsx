@@ -1,5 +1,6 @@
 import React from 'react';
 import Hero from '../../components/sections/Hero/Hero';
+import AfterpayBanner from '../../components/sections/AfterpayBanner/AfterpayBanner';
 import WOFInspections from '../../components/sections/WOFInspections/WOFInspections';
 import ServicesThatKeepYouMoving from '../../components/sections/ServicesThatKeepYouMoving/ServicesThatKeepYouMoving';
 import FAQ from '../../components/sections/FAQ/FAQ';
@@ -40,6 +41,7 @@ const WOF = () => {
                 title="Warrant of Fitness (WOF)"
                 short
             />
+            <AfterpayBanner />
             <WOFInspections />
             <ServicesThatKeepYouMoving />
             <FAQ

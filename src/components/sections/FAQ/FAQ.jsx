@@ -12,43 +12,43 @@ const defaultFaqs = [
     },
     {
         question: "Do you carry out Warrant of Fitness (WOF) inspections?",
-        answer: "Yes, we are a fully certified WOF testing station. We can perform your inspection and also carry out any necessary repairs if your vehicle fails."
+        answer: "Yes, we provide thorough WOF inspections in line with New Zealand safety standards. If repairs are required, we'll explain exactly what needs attention and provide a clear quote before starting any work."
     },
     {
         question: "What happens if my vehicle fails its WOF?",
-        answer: "If your vehicle fails its WOF, we will provide a detailed report of the issues. We can quote and perform the necessary repairs onsite, then recheck and issue your WOF once compliant."
+        answer: "If your vehicle doesn't pass inspection, we'll give you a detailed list of required repairs. You have 28 days to complete the work and return for a recheck."
     },
     {
         question: "How often should I service my car?",
-        answer: "Generally, we recommend a minor service every 10,000km or 6 months, and a major service every 20,000km or 12 months, though this can vary based on your vehicle's make, model, and age."
+        answer: "Most vehicles should be serviced every 10,000 - 15,000km or once a year, whichever comes first. Regular servicing helps prevent breakdowns, improves fuel efficiency, and extends the life of your vehicle."
     },
     {
         question: "Can you diagnose engine warning lights?",
-        answer: "Yes, we have advanced diagnostic scan tools to read engine codes and identify issues causing warning lights on your dashboard."
+        answer: "Absolutely. We use modern diagnostic equipment to identify engine fault codes and performance issues. Once diagnosed, we'll explain the problem in plain English and outline the next steps."
     },
     {
         question: "Do you provide brake repairs and replacements?",
-        answer: "Absolutely. We offer comprehensive brake services including pad replacements, rotor machining, fluid flushes, and full system safety checks."
+        answer: "Yes. We inspect and repair brake pads, discs, and related components. If you hear squealing, grinding, or notice reduced braking performance, it's important to have your brakes checked promptly."
     },
     {
         question: "Do you repair major mechanical issues like engines and gearboxes?",
-        answer: "Yes, our experienced mechanics can handle major repairs including full engine rebuilds, gearbox replacements, and complex mechanical diagnostics."
+        answer: "Our experienced mechanics handle everything from minor repairs to complex engine and gearbox work, focusing on reliable, long-term solutions."
     },
     {
         question: "Do you work on all vehicle makes and models?",
-        answer: "We service and repair a wide variety of vehicles including all common Japanese, European, and American makes and models."
+        answer: "We service most makes and models, including petrol and diesel vehicles. If you're unsure about your specific vehicle, feel free to contact us."
     },
     {
         question: "What's included in a full vehicle service?",
-        answer: "A full service typically includes engine oil and filter change, checking and topping up all fluids, comprehensive safety check, brake inspection, suspension check, and tire pressure adjustments."
+        answer: "A standard service typically includes an oil and filter change, fluid checks, brake inspection, tyre condition check, and a general safety and mechanical assessment."
     },
     {
         question: "Do you offer pre-purchase vehicle inspections?",
-        answer: "Yes, we can perform thorough pre-purchase inspections to give you peace of mind before buying a used vehicle."
+        answer: "Yes. If you're buying a used vehicle, we can carry out a detailed inspection to help you understand its mechanical condition before committing."
     },
     {
         question: "Where are you located and how do I book an appointment?",
-        answer: "We are located at 123 Mechanic Street, Auckland. You can book an appointment by calling us or using the 'Book online now' button on our website."
+        answer: "Our workshop is conveniently located in Bromley, serving drivers across Christchurch. You can book your WOF, service, or repairs by calling us or using form below."
     }
 ];
 
@@ -81,7 +81,7 @@ const FAQItem = ({ faq, isOpen, onClick }) => {
                 className={styles.accordionContent}
                 style={{ maxHeight: contentHeight }}
             >
-                <div className={styles.accordionInner} ref={contentRef}>
+                 <div className={styles.accordionInner} ref={contentRef}>
                     <p>{faq.answer}</p>
                 </div>
             </div>

@@ -56,7 +56,7 @@ const GeneralRepairs = () => {
                     <h2 className={styles.title}>General Automotive Repairs</h2>
 
                     <p className={styles.description}>
-                        From brake and suspension work to engine diagnostics and electrical issues, we handle a wide range of general automotive repairs. Our team uses up-to-date diagnostic equipment to identify problems accurately and get you back on the road with reliable, safe repairs.
+                        From brake and suspension work to engine diagnostics, we handle a wide range of general automotive repairs. Our team uses up-to-date diagnostic equipment to identify problems accurately and get you back on the road with reliable, safe repairs.
                     </p>
 
                     <p className={styles.description}>

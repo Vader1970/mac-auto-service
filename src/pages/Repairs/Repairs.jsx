@@ -1,5 +1,6 @@
 import React from 'react';
 import Hero from '../../components/sections/Hero/Hero';
+import AfterpayBanner from '../../components/sections/AfterpayBanner/AfterpayBanner';
 import GeneralRepairs from '../../components/sections/GeneralRepairs/GeneralRepairs';
 import RepairsCTA from '../../components/sections/RepairsCTA/RepairsCTA';
 import RepairServicesWeOffer from '../../components/sections/RepairServicesWeOffer/RepairServicesWeOffer';
@@ -13,6 +14,7 @@ const Repairs = () => {
                 title="Repairs"
                 short
             />
+            <AfterpayBanner />
             <GeneralRepairs />
             <RepairsCTA />
             <RepairServicesWeOffer />

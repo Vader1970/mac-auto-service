@@ -1,0 +1,58 @@
+.bannerContainer {
+    width: 100%;
+    background-color: #EFEB14;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bannerContent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    /* ensures it looks good on mobile */
+}
+
+.bannerText {
+    color: #54595F;
+    font-size: 20px;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.bannerText strong {
+    font-weight: 700;
+}
+
+.regularText {
+    font-weight: 400;
+}
+
+.svgWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #54595F;
+    border-radius: 50px;
+    padding: 6px 14px;
+}
+
+.afterpaySvg {
+    height: 20px;
+    width: auto;
+    fill: #EFEB14;
+}
+
+/* Add some simple responsiveness */
+@media (max-width: 768px) {
+    .bannerText {
+        font-size: 16px;
+    }
+
+    .afterpaySvg {
+        height: 16px;
+    }
+}
