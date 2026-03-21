@@ -29,7 +29,7 @@ const ContactPageSection = () => {
     }, []);
 
     return (
-        <section className={styles.contactSection} ref={sectionRef}>
+        <section id="booking-form" className={styles.contactSection} ref={sectionRef}>
             <div className={styles.container}>
 
                 {/* Left Side: Form and Map */}

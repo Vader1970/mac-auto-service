@@ -1,0 +1,97 @@
+.section {
+    background-color: #313131;
+    padding: 100px 0;
+    overflow: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin-bottom: 80px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.carouselContainer {
+    width: 100%;
+    overflow: hidden;
+    /* Soft fade on edges */
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.track {
+    display: flex;
+    width: max-content;
+    animation: scroll 25s linear infinite;
+}
+
+.track:hover {
+    animation-play-state: paused;
+}
+
+.logoSet {
+    display: flex;
+    align-items: center;
+    gap: 100px;
+    padding-right: 100px; /* Crucial for seamless looping: matches the gap */
+    flex-shrink: 0;
+}
+
+.logo {
+    height: 70px;
+    width: auto;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@media (max-width: 768px) {
+    .section {
+        padding: 60px 0;
+    }
+    .title {
+        font-size: 2.5rem;
+        margin-bottom: 50px;
+    }
+    .logo {
+        height: 50px;
+    }
+    .logoSet {
+        gap: 60px;
+        padding-right: 60px;
+    }
+    .track {
+        animation-duration: 12.5s;
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 1.75rem;
+    }
+    .logo {
+        height: 40px;
+    }
+    .logoSet {
+        gap: 40px;
+        padding-right: 40px;
+    }
+}

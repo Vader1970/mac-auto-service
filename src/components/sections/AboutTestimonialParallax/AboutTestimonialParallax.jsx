@@ -1,21 +1,19 @@
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import styles from './RepairsCTA.module.css';
+import styles from './AboutTestimonialParallax.module.css';
 
-import bgImg from '../../../assets/images/engine-repair.webp';
+import bgImg from '../../../assets/images/happy-customer.webp';
+import starImg from '../../../assets/images/gold-Star.png';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const RepairsCTA = () => {
+const AboutTestimonialParallax = () => {
     const sectionRef = useRef(null);
-    // const bgRef = useRef(null);
     const contentRef = useRef(null);
 
     useEffect(() => {
         const ctx = gsap.context(() => {
-            // Parallax effect removed, handled by CSS on section
-
             gsap.fromTo(contentRef.current.children,
                 { y: 30, opacity: 0 },
                 {
@@ -39,22 +37,21 @@ const RepairsCTA = () => {
         <section className={styles.section} style={{ backgroundImage: `url(${bgImg})` }} ref={sectionRef}>
             <div className={styles.overlay}></div>
 
-
             <div className={styles.container} ref={contentRef}>
-                <h2 className={styles.title}>Quality Repairs. Trusted Mechanics.</h2>
-                <div className={styles.textContainer}>
-                    <p className={styles.subtitle}>From brakes and diagnostics to engine and transmission work, we've got you covered.</p>
-                    <p className={styles.subtitle}>Get a clear quote and book your repair with a Christchurch mechanic you can trust.</p>
+                <div className={styles.card}>
+                    <div className={styles.starsWrapper}>
+                        {[...Array(5)].map((_, i) => (
+                            <img key={i} src={starImg} alt="Gold Star" className={styles.starsIcon} />
+                        ))}
+                    </div>
+                    <p className={styles.reviewText}>
+                        Brilliant Place to go to get Maintenance Or Servicing done On your Motor vehicles. Chris Lowe Will See U Right.
+                    </p>
+                    <p className={styles.authorText}>Harry Robinson</p>
                 </div>
-                <button
-                    onClick={(e) => { e.preventDefault(); document.getElementById('booking-form')?.scrollIntoView({ behavior: 'smooth' }); }}
-                    className={styles.ctaButton}
-                >
-                    Book Your Repairs Today
-                </button>
             </div>
         </section>
     );
 };
 
-export default RepairsCTA;
+export default AboutTestimonialParallax;

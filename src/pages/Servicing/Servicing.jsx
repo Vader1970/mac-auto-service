@@ -4,6 +4,7 @@ import AfterpayBanner from '../../components/sections/AfterpayBanner/AfterpayBan
 import ServicingIntro from '../../components/sections/ServicingIntro/ServicingIntro';
 import ServicingParallax from '../../components/sections/ServicingParallax/ServicingParallax';
 import FAQ from '../../components/sections/FAQ/FAQ';
+import ContactPageSection from '../../components/sections/ContactPageSection/ContactPageSection';
 import servicingHeroImg from '../../assets/images/mac-servicing.jpg';
 
 const servicingFaqs = [
@@ -45,6 +46,7 @@ const Servicing = () => {
                 description="Got questions about bringing your car in for a service? Here are some of the most common questions we get from drivers."
                 faqs={servicingFaqs} 
             />
+            <ContactPageSection />
         </div>
     );
 };

@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import styles from './WOFInspections.module.css';
@@ -71,7 +70,12 @@ const WOFInspections = () => {
                     In cases where specialist repairs are required — such as windscreen replacement or panel work — we can recommend trusted local providers and help coordinate the process to ensure your vehicle meets compliance standards as smoothly as possible.
                     </p>
 
-                    <Link to="/contact" className={styles.bookButton}>Book Your WOF Today</Link>
+                    <button 
+                        onClick={(e) => { e.preventDefault(); document.getElementById('booking-form')?.scrollIntoView({ behavior: 'smooth' }); }} 
+                        className={styles.bookButton}
+                    >
+                        Book Your WOF Today
+                    </button>
                 </div>
 
                 <div className={styles.imageContent} ref={imageRef}>

@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import styles from './CTA.module.css';
@@ -9,7 +10,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const CTA = () => {
     const sectionRef = useRef(null);
-    const bgRef = useRef(null);
+    // const bgRef = useRef(null);
     const contentRef = useRef(null);
 
     useEffect(() => {
@@ -47,7 +48,7 @@ const CTA = () => {
                     <p className={styles.subtitle}>Fast booking. Clear pricing. Trusted technicians.</p>
                     <p className={styles.subtitle}>Get back on the road safely without the hassle.</p>
                 </div>
-                <button className={styles.ctaButton}>Book online now</button>
+                <Link to="/services" className={styles.ctaButton}>View Our Services</Link>
             </div>
         </section>
     );

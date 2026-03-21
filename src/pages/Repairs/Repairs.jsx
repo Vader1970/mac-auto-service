@@ -4,6 +4,7 @@ import AfterpayBanner from '../../components/sections/AfterpayBanner/AfterpayBan
 import GeneralRepairs from '../../components/sections/GeneralRepairs/GeneralRepairs';
 import RepairsCTA from '../../components/sections/RepairsCTA/RepairsCTA';
 import RepairServicesWeOffer from '../../components/sections/RepairServicesWeOffer/RepairServicesWeOffer';
+import ContactPageSection from '../../components/sections/ContactPageSection/ContactPageSection';
 import repairsHeroImg from '../../assets/images/repairs-hero.webp';
 
 const Repairs = () => {
@@ -13,11 +14,13 @@ const Repairs = () => {
                 imageSrc={repairsHeroImg}
                 title="Repairs"
                 short
+                backgroundPositionMobile="left"
             />
             <AfterpayBanner />
             <GeneralRepairs />
             <RepairsCTA />
             <RepairServicesWeOffer />
+            <ContactPageSection />
         </div>
     );
 };

@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import styles from './ServicesThatKeepYouMoving.module.css';
@@ -10,7 +9,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const ServicesThatKeepYouMoving = () => {
     const sectionRef = useRef(null);
-    const bgRef = useRef(null);
+    // const bgRef = useRef(null);
     const contentRef = useRef(null);
 
     useEffect(() => {
@@ -47,7 +46,12 @@ const ServicesThatKeepYouMoving = () => {
                     <p className={styles.subtitle}>Don't wait until its too late.</p>
                     <p className={styles.subtitle}>Book Your WOF with a trusted Christchurch mechanic.</p>
                 </div>
-                <Link to="/contact" className={styles.ctaButton}>Book Your WOF Today</Link>
+                <button 
+                    onClick={(e) => { e.preventDefault(); document.getElementById('booking-form')?.scrollIntoView({ behavior: 'smooth' }); }} 
+                    className={styles.ctaButton}
+                >
+                    Book Your WOF Today
+                </button>
             </div>
         </section>
     );
