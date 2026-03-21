@@ -14,14 +14,30 @@ const Navbar = () => {
     const location = useLocation();
     const navigate = useNavigate();
 
+    const hideMobileMenuDom = () => {
+        if (mobileMenuRef.current) {
+            gsap.set(mobileMenuRef.current, {
+                top: '-100vh',
+                opacity: 0,
+                visibility: 'hidden',
+            });
+        }
+    };
+
+    const closeMobileMenu = () => {
+        hideMobileMenuDom();
+        setIsMenuOpen(false);
+        setIsMobileServicesOpen(false);
+    };
+
     const handleWofCtaClick = (e) => {
         e.preventDefault();
         if (location.pathname === '/services/wof') {
             document.getElementById('booking-form')?.scrollIntoView({ behavior: 'smooth' });
-            if (isMenuOpen) toggleMenu();
+            if (isMenuOpen) closeMobileMenu();
         } else {
             navigate('/services/wof');
-            if (isMenuOpen) toggleMenu();
+            if (isMenuOpen) closeMobileMenu();
         }
     };
 
@@ -53,42 +69,30 @@ const Navbar = () => {
     }, []);
 
     const toggleMenu = () => {
-        const nextState = !isMenuOpen;
-        setIsMenuOpen(nextState);
-
-        if (nextState) {
-            gsap.to(mobileMenuRef.current, {
-                top: '100%',
-                opacity: 1,
-                visibility: 'visible',
-                duration: 0.5,
-                ease: 'power3.out'
-            });
-        } else {
-            gsap.to(mobileMenuRef.current, {
-                top: '-100vh',
-                opacity: 0,
-                visibility: 'hidden',
-                duration: 0.5,
-                ease: 'power3.in'
-            });
+        if (isMenuOpen) {
+            /* Instant hide so menu + “Book Your WOF” don’t linger over the page */
+            closeMobileMenu();
+            return;
         }
+        setIsMenuOpen(true);
+        gsap.to(mobileMenuRef.current, {
+            top: '100%',
+            opacity: 1,
+            visibility: 'visible',
+            duration: 0.5,
+            ease: 'power3.out',
+        });
     };
 
+    /* Close menu on route change: sync DOM in effect; defer setState so React 19 doesn’t warn about cascading renders */
     useEffect(() => {
         if (!isMenuOpenRef.current) return;
-        gsap.to(mobileMenuRef.current, {
-            top: '-100vh',
-            opacity: 0,
-            visibility: 'hidden',
-            duration: 0.5,
-            ease: 'power3.in',
-            onComplete: () => {
-                setIsMenuOpen(false);
-                setIsMobileServicesOpen(false);
-            }
+        hideMobileMenuDom();
+        queueMicrotask(() => {
+            setIsMenuOpen(false);
+            setIsMobileServicesOpen(false);
         });
-    }, [location]);
+    }, [location.pathname]);
 
     return (
         <header className={styles.header} ref={navbarRef}>
