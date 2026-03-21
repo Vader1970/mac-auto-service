@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { Link } from 'react-router-dom';
 import styles from './WhyChooseUs.module.css';
 
 import mustangImg from '../../../assets/images/purple-mustang.jpg';
@@ -78,7 +79,7 @@ const WhyChooseUs = () => {
                         ))}
                     </ul>
 
-                    <button className={styles.bookButton}>Book Your Service</button>
+                    <Link to="/services/servicing" className={styles.bookButton}>Book Your Service</Link>
                 </div>
 
                 <div className={styles.imageContent} ref={imageRef}>

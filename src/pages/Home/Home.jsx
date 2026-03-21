@@ -7,7 +7,7 @@ import CTA from '../../components/sections/CTA/CTA';
 import WhyChooseUs from '../../components/sections/WhyChooseUs/WhyChooseUs';
 import Testimonials from '../../components/sections/Testimonials/Testimonials';
 import FAQ from '../../components/sections/FAQ/FAQ';
-import ContactUs from '../../components/sections/ContactUs/ContactUs';
+import ContactPageSection from '../../components/sections/ContactPageSection/ContactPageSection';
 
 const Home = () => {
     return (
@@ -20,7 +20,7 @@ const Home = () => {
             <WhyChooseUs />
             <Testimonials />
             <FAQ />
-            <ContactUs />
+            <ContactPageSection />
         </div>
     );
 };

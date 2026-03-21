@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import styles from './ServicingParallax.module.css';
@@ -59,7 +58,12 @@ const ServicingParallax = () => {
                     <p className={styles.subtitle}>Protect your investment and ensure your family's safety with regular, professional servicing.</p>
                     <p className={styles.subtitle}>Experience honest pricing, expert advice, and mechanics who truly care about your vehicle.</p>
                 </div>
-                <Link to="/contact" className={styles.ctaButton}>Book Your Service Now</Link>
+                <button 
+                    onClick={(e) => { e.preventDefault(); document.getElementById('booking-form')?.scrollIntoView({ behavior: 'smooth' }); }} 
+                    className={styles.ctaButton}
+                >
+                    Book Your Service Now
+                </button>
             </div>
         </section>
     );

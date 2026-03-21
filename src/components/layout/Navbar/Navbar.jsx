@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import gsap from 'gsap';
 import styles from './Navbar.module.css';
 import logoImg from '../../../assets/images/logo-mac-auto-services.png';
@@ -12,6 +12,18 @@ const Navbar = () => {
     const lastScrollY = useRef(0);
     const isMenuOpenRef = useRef(isMenuOpen);
     const location = useLocation();
+    const navigate = useNavigate();
+
+    const handleWofCtaClick = (e) => {
+        e.preventDefault();
+        if (location.pathname === '/services/wof') {
+            document.getElementById('booking-form')?.scrollIntoView({ behavior: 'smooth' });
+            if (isMenuOpen) toggleMenu();
+        } else {
+            navigate('/services/wof');
+            if (isMenuOpen) toggleMenu();
+        }
+    };
 
     useEffect(() => {
         isMenuOpenRef.current = isMenuOpen;
@@ -103,7 +115,7 @@ const Navbar = () => {
                     </ul>
                 </nav>
                 <div className={styles.ctaDesktop}>
-                    <Link to="/services/wof" className="btn">Book Your WOF Here</Link>
+                    <button onClick={handleWofCtaClick} className="btn">Book Your WOF Here</button>
                 </div>
 
                 {/* Hamburger Icon */}
@@ -141,7 +153,7 @@ const Navbar = () => {
                     <li><Link to="/about">About</Link></li>
                     <li><Link to="/contact">Contact Us</Link></li>
                     <li className={styles.mobileCta}>
-                        <Link to="/services/wof" className="btn">Book Your WOF</Link>
+                        <button onClick={handleWofCtaClick} className="btn">Book Your WOF</button>
                     </li>
                 </ul>
             </div>

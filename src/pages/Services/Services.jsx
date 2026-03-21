@@ -2,6 +2,7 @@ import React from 'react';
 import Hero from '../../components/sections/Hero/Hero';
 import AfterpayBanner from '../../components/sections/AfterpayBanner/AfterpayBanner';
 import ServicesSection from '../../components/sections/Services/Services';
+import ContactPageSection from '../../components/sections/ContactPageSection/ContactPageSection';
 import oilChangeImg from '../../assets/images/services-hero.jpg';
 
 const Services = () => {
@@ -23,6 +24,7 @@ const Services = () => {
                     </p>
                 }
             />
+            <ContactPageSection />
         </div>
     );
 };

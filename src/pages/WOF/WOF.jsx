@@ -4,6 +4,7 @@ import AfterpayBanner from '../../components/sections/AfterpayBanner/AfterpayBan
 import WOFInspections from '../../components/sections/WOFInspections/WOFInspections';
 import ServicesThatKeepYouMoving from '../../components/sections/ServicesThatKeepYouMoving/ServicesThatKeepYouMoving';
 import FAQ from '../../components/sections/FAQ/FAQ';
+import ContactPageSection from '../../components/sections/ContactPageSection/ContactPageSection';
 import wofHeroImg from '../../assets/images/wof-hero.jpg';
 
 const wofFaqs = [
@@ -49,6 +50,7 @@ const WOF = () => {
                 description="Here are some commonly asked questions about a Warrant of Fitness (WOF). If you don't find your question here, give our friendly team a call."
                 faqs={wofFaqs}
             />
+            <ContactPageSection />
         </div>
     );
 };

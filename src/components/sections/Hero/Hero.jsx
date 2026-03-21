@@ -66,8 +66,12 @@ const Hero = ({ imageSrc, title, description, ctaText, ctaLink, short: isShort, 
 
     const titleOnly = !hasDescription && !hasCta;
 
+    const mobileBgClass = backgroundPositionMobile === 'right' ? styles.bgRightMobile : 
+                          backgroundPositionMobile === 'left' ? styles.bgLeftMobile : 
+                          backgroundPositionMobile === 'center' ? styles.bgCenterMobile : '';
+
     return (
-        <section className={`${styles.hero} ${titleOnly ? styles.titleOnly : ''} ${isShort ? styles.heroShort : ''} ${backgroundPositionMobile === 'right' ? styles.bgRightMobile : ''}`} ref={heroRef}>
+        <section className={`${styles.hero} ${titleOnly ? styles.titleOnly : ''} ${isShort ? styles.heroShort : ''} ${mobileBgClass}`} ref={heroRef}>
             <div
                 className={styles.background}
                 style={imageSrc ? { backgroundImage: `url(${imageSrc})` } : undefined}

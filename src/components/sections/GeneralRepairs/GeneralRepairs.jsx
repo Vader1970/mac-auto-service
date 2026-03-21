@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import styles from './GeneralRepairs.module.css';
@@ -71,7 +70,12 @@ const GeneralRepairs = () => {
                         Contact us to discuss your repair needs or book your vehicle in. We're here to help keep your vehicle running safely and reliably.
                     </p>
 
-                    <Link to="/contact" className={styles.bookButton}>Book Your Repairs Today</Link>
+                    <button 
+                        onClick={(e) => { e.preventDefault(); document.getElementById('booking-form')?.scrollIntoView({ behavior: 'smooth' }); }} 
+                        className={styles.bookButton}
+                    >
+                        Book Your Repairs Today
+                    </button>
                 </div>
 
                 <div className={styles.imageContent} ref={imageRef}>

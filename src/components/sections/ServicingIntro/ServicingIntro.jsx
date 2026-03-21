@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import styles from './ServicingIntro.module.css';
@@ -71,7 +70,12 @@ const ServicingIntro = () => {
                         Don't wait for a warning light to appear. Keep your car running smoothly and efficiently by scheduling your next service with our trusted Christchurch mechanics.
                     </p>
 
-                    <Link to="/contact" className={styles.bookButton}>Book Your Service Today</Link>
+                    <button 
+                        onClick={(e) => { e.preventDefault(); document.getElementById('booking-form')?.scrollIntoView({ behavior: 'smooth' }); }} 
+                        className={styles.bookButton}
+                    >
+                        Book Your Service Today
+                    </button>
                 </div>
 
                 <div className={styles.imageContent} ref={imageRef}>
