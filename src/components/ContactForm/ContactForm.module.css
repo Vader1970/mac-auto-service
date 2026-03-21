@@ -1,0 +1,85 @@
+.contactForm {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.inputGroup {
+    display: flex;
+    flex-direction: column;
+}
+
+.label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #444444;
+    margin-bottom: 8px;
+}
+
+.required {
+    color: #D32F2F;
+}
+
+.labelRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.charCount {
+    font-size: 0.8rem;
+    color: #888888;
+}
+
+.input,
+.select,
+.textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #CCCCCC;
+    border-radius: 4px;
+    font-size: 1rem;
+    color: var(--color-text-lightbg, #7A7A7A);
+    background-color: #FAFAFA;
+    transition: border-color 0.3s ease;
+}
+
+.input:focus,
+.select:focus,
+.textarea:focus {
+    outline: none;
+    border-color: #888888;
+}
+
+.select {
+    appearance: none;
+    cursor: pointer;
+    background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 24 24" width="24" height="24" xmlns="http://www.w3.org/2000/svg" stroke="%23888" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>');
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 16px;
+}
+
+.textarea {
+    resize: none;
+    height: 150px;
+}
+
+.submitButton {
+    background-color: var(--color-primary, #EFEB14);
+    color: #000000;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    align-self: flex-start;
+    margin-top: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.submitButton:hover {
+    background-color: #d1cc10;
+    transform: translateY(-2px);
+}

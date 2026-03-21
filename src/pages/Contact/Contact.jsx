@@ -1,20 +1,18 @@
-import React from 'react';
 import Hero from '../../components/sections/Hero/Hero';
 import AfterpayBanner from '../../components/sections/AfterpayBanner/AfterpayBanner';
+import ContactPageSection from '../../components/sections/ContactPageSection/ContactPageSection';
+import contactHeroImg from '../../assets/images/contact-us.webp';
 
 const Contact = () => {
     return (
         <div className="contact-page">
             <Hero
+                imageSrc={contactHeroImg}
                 title="Contact Us"
-                description="Get in touch with our friendly team to book a WOF, service, or repair. We're here to help with straightforward advice and appointments that suit you."
-                ctaText="Book Your WOF Here"
-                ctaLink="/services/wof"
+                short
             />
             <AfterpayBanner />
-            <div className="page-container" style={{ padding: '60px 20px', maxWidth: 1200, margin: '0 auto' }}>
-                <p>Waiting for section screenshots to build the content...</p>
-            </div>
+            <ContactPageSection />
         </div>
     );
 };

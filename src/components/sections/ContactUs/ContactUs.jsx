@@ -146,7 +146,7 @@ const ContactUs = () => {
                         <h3 className={styles.cardTitle}>Get In Touch</h3>
                         <div className={styles.yellowDivider}></div>
                         <p className={styles.cardText}>
-                            Come in and have a chat to the friendly team at Mac Auto Services. Regardless of whether you just need an oil top up a tyre change, or just simply need to ask us a question we can help.
+                            Ready to book your vehicle in or need some advice first? Get in touch with the team at Mac Auto Services and we'll help you organise a time that works for you.
                         </p>
 
                         <h3 className={styles.cardTitle}>Contact Us</h3>
@@ -160,7 +160,7 @@ const ContactUs = () => {
                         <p className={styles.contactInfo}>Christchurch 8062,</p>
                         <p className={styles.contactInfo}>Bromley</p>
 
-                    
+
                     </div>
                 </div>
 

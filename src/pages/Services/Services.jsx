@@ -10,9 +10,7 @@ const Services = () => {
             <Hero
                 imageSrc={oilChangeImg}
                 title="Our Services"
-                description="From oil changes and routine servicing to WOF inspections, brake repairs, and full mechanical work—we keep your car, bike, or light truck running safely and reliably."
-                ctaText="Book Your WOF Here"
-                ctaLink="/services/wof"
+                short
             />
             <AfterpayBanner />
             <ServicesSection
