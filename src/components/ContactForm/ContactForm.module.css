@@ -79,7 +79,33 @@
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.submitButton:hover {
+.submitButton:hover:not(:disabled) {
     background-color: #d1cc10;
     transform: translateY(-2px);
+}
+
+.submitButton:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.formSuccess,
+.formError {
+    padding: 12px 14px;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.formSuccess {
+    background-color: #e8f5e9;
+    color: #1b5e20;
+    border: 1px solid #a5d6a7;
+}
+
+.formError {
+    background-color: #ffebee;
+    color: #b71c1c;
+    border: 1px solid #ef9a9a;
 }
