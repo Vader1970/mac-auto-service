@@ -12,7 +12,7 @@ const servicesList = [
         title: "Brake Repairs & Safety Inspections",
         description: (
             <div className={styles.richContent}>
-                <p>Your brakes are your car&apos;s most important safety feature. If you&apos;re noticing squeaks, juddering, pulling to one side, or a handbrake that struggles on hills, it&apos;s time to have them checked. Ignoring the signs can lead to reduced stopping power, expensive damage, or even a failed Warrant of Fitness.</p>
+                <p>Your brakes are your car&apos;s most important safety feature. If you&apos;re noticing squeaks, shuddering, pulling to one side, or a handbrake that struggles on hills, it&apos;s time to have them checked. Ignoring the signs can lead to reduced stopping power, expensive damage, or even a failed Warrant of Fitness.</p>
                 <p>At Mac Auto Services, our qualified technicians use the latest tools and equipment to diagnose issues accurately and restore your braking system to peak performance.</p>
                 <p>Our brake services include:</p>
                 <ul>
@@ -135,7 +135,6 @@ const servicesList = [
                     <li>Control arm, bush, and ball joint repairs</li>
                     <li>Steering rack, pump, and linkage repairs</li>
                     <li>Suspension checks for WoF</li>
-                    <li>Wheel alignment checks and adjustments</li>
                 </ul>
                 <p>Whether it&apos;s a single worn joint or a full suspension refresh, we&apos;ll get your car riding and steering the way it should. Book your suspension and steering check today and feel the difference on the road.</p>
                 <Link to="/contact" className={styles.bookButton}>Book Your Suspension & Steering Check Today</Link>
@@ -153,7 +152,6 @@ const servicesList = [
                     <li>New tyre supply and fitting</li>
                     <li>Wheel balancing</li>
                     <li>Puncture repairs when safe to do so</li>
-                    <li>Wheel alignment checks and adjustments</li>
                     <li>Tyre rotation and tread wear checks</li>
                 </ul>
                 <p>Whether you need one tyre or a full set and balancing, we'll help your car handle and stop safely in all conditions. Book your tyre and wheel service today and stay safe on the road.</p>

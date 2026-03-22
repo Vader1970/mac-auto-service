@@ -23,7 +23,7 @@ export const SERVICES_PAGE_TITLE =
     'WOF | Warrant of Fitness | Car Repairs & maintenance | Servicing';
 
 export const SERVICES_PAGE_DESCRIPTION =
-    'Experienced Christchurch mechanic with 30+ years offering WOF, oil changes, brake service, transmission repairs, wheel alignments, and more.';
+    'Experienced Christchurch mechanic with 30+ years offering WOF, oil changes, brake service, transmission repairs, and more.';
 
 export const WOF_PAGE_TITLE =
     'Warrant of Fitness (WOF) Christchurch | Book Your Inspection';
