@@ -62,15 +62,6 @@ const ContactForm = () => {
 
     return (
         <form className={styles.contactForm} onSubmit={handleSubmit} noValidate>
-            {status && (
-                <div
-                    className={status.type === 'success' ? styles.formSuccess : styles.formError}
-                    role="alert"
-                >
-                    {status.text}
-                </div>
-            )}
-
             <div className={styles.inputGroup}>
                 <label className={styles.label} htmlFor="firstName">
                     First Name <span className={styles.required}>*</span>
@@ -162,6 +153,15 @@ const ContactForm = () => {
             >
                 {isSubmitting ? 'Sending…' : 'Submit'}
             </button>
+
+            {status && (
+                <div
+                    className={status.type === 'success' ? styles.formSuccess : styles.formError}
+                    role="alert"
+                >
+                    {status.text}
+                </div>
+            )}
         </form>
     );
 };

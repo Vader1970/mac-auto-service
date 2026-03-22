@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect, useLayoutEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Link } from 'react-router-dom';
-import { Settings, ShieldCheck, Wrench, Car, Award } from 'lucide-react';
+import { Settings, ShieldCheck, Wrench, Clock, Award } from 'lucide-react';
 import styles from './RepairServicesWeOffer.module.css';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -180,9 +180,9 @@ const featuresList = [
         description: "For all major warranty companies"
     },
     {
-        icon: <Car size={24} color="#54595F" />,
-        title: "COURTESY CARS AVAILABLE",
-        description: "Private and commercial vehicles available by request"
+        icon: <Clock size={24} color="#54595F" />,
+        title: "FAST TURNAROUND TIMES",
+        description: "Most servicing and repairs completed same day where possible"
     },
     {
         icon: <ShieldCheck size={24} color="#54595F" />,

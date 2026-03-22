@@ -42,7 +42,7 @@ const Servicing = () => {
             <ServicingIntro />
             <ServicingParallax />
             <FAQ 
-                title="Servicing FAQ's" 
+                title="FAQ's" 
                 description="Got questions about bringing your car in for a service? Here are some of the most common questions we get from drivers."
                 faqs={servicingFaqs} 
             />
