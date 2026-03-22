@@ -1,0 +1,9 @@
+# Mac Auto Services — https://www.macautoservices.co.nz
+User-agent: *
+Allow: /
+
+# Serverless API routes are not for indexing
+Disallow: /api/
+
+# Uncomment when you publish a sitemap:
+# Sitemap: https://www.macautoservices.co.nz/sitemap.xml
