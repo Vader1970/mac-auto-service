@@ -3,7 +3,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import styles from './ServicingIntro.module.css';
 
-import servicingIntroImg from '../../../assets/images/srt.webp';
+import servicingIntroImg from '../../../assets/images/chris-working.webp';
 
 gsap.registerPlugin(ScrollTrigger);
 
