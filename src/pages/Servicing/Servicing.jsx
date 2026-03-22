@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { SERVICING_PAGE_DESCRIPTION, SERVICING_PAGE_TITLE, SITE_TITLE } from '../../constants/seo';
 import Hero from '../../components/sections/Hero/Hero';
 import AfterpayBanner from '../../components/sections/AfterpayBanner/AfterpayBanner';
 import ServicingIntro from '../../components/sections/ServicingIntro/ServicingIntro';
@@ -31,6 +32,28 @@ const servicingFaqs = [
 ];
 
 const Servicing = () => {
+    useEffect(() => {
+        document.title = SERVICING_PAGE_TITLE;
+
+        let meta = document.querySelector('meta[name="description"]');
+        const createdMeta = !meta;
+        if (!meta) {
+            meta = document.createElement('meta');
+            meta.setAttribute('name', 'description');
+            document.head.appendChild(meta);
+        }
+        meta.setAttribute('content', SERVICING_PAGE_DESCRIPTION);
+
+        return () => {
+            document.title = SITE_TITLE;
+            if (createdMeta) {
+                meta.remove();
+            } else {
+                meta.removeAttribute('content');
+            }
+        };
+    }, []);
+
     return (
         <div className="servicing-page">
             <Hero
