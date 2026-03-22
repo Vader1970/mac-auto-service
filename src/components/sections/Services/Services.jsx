@@ -34,7 +34,7 @@ const defaultIntro = (
             Our experienced mechanics have over 30 years experience providing a comprehensive range of automotive maintenance and repair services. We aim to provide top quality customer service and workmanship for all our clients throughout the Christchurch and wider Canterbury region.
         </p>
         <p>
-            From motorhomes and trailers to cars, utes, vans and light trucks, our workshop can cater to a wide variety of repairs and general maintenance needs. If you simply need of WOF, oil change, new tyres, a wheel alignment or a full engine rebuild, we've got you covered.
+            From motorhomes and trailers to cars, utes, vans and light trucks, our workshop can cater to a wide variety of repairs and general maintenance needs. If you simply need of WOF, oil change, new tyres, or a full engine rebuild, we've got you covered.
         </p>
         <p>
             Come in and talk to our friendly team, we'll assess your vehicle and get you back up and running and on the road.
