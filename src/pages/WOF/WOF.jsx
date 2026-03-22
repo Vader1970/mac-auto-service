@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { SITE_TITLE, WOF_PAGE_DESCRIPTION, WOF_PAGE_TITLE } from '../../constants/seo';
 import Hero from '../../components/sections/Hero/Hero';
 import AfterpayBanner from '../../components/sections/AfterpayBanner/AfterpayBanner';
 import WOFInspections from '../../components/sections/WOFInspections/WOFInspections';
@@ -35,6 +36,28 @@ const wofFaqs = [
 ];
 
 const WOF = () => {
+    useEffect(() => {
+        document.title = WOF_PAGE_TITLE;
+
+        let meta = document.querySelector('meta[name="description"]');
+        const createdMeta = !meta;
+        if (!meta) {
+            meta = document.createElement('meta');
+            meta.setAttribute('name', 'description');
+            document.head.appendChild(meta);
+        }
+        meta.setAttribute('content', WOF_PAGE_DESCRIPTION);
+
+        return () => {
+            document.title = SITE_TITLE;
+            if (createdMeta) {
+                meta.remove();
+            } else {
+                meta.removeAttribute('content');
+            }
+        };
+    }, []);
+
     return (
         <div className="wof-page">
             <Hero
