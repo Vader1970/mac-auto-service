@@ -21,10 +21,14 @@
 }
 
 .title {
-    font-size: 2.75rem;
+    font-size: 2rem;
     font-weight: 700;
     color: var(--color-heading-lightbg);
     margin-bottom: 25px;
+}
+
+.highlight {
+    color: var(--color-primary);
 }
 
 .description {
@@ -128,3 +132,9 @@
         width: 100%;
     }
 }
+
+/* @media (max-width: 768px) {
+    .title {
+        font-size: 2rem;
+    }
+} */

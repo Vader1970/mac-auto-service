@@ -8,7 +8,7 @@ gsap.registerPlugin(ScrollTrigger);
 const defaultFaqs = [
     {
         question: "What services does your mechanic workshop provide?",
-        answer: "We offer a full range of automotive services, including Warrant of Fitness (WOF) inspections, routine servicing, brake repairs, engine diagnostics, mechanical repairs, and pre-purchase inspections for cars, motorbikes, trailers, and light trucks."
+        answer: "We offer a full range of automotive services, including Warrant of Fitness (WOF) inspections, routine servicing, brake repairs, engine diagnostics, mechanical repairs, and pre-purchase inspections for cars, motorhomes, trailers, and light trucks."
     },
     {
         question: "Do you carry out Warrant of Fitness (WOF) inspections?",
@@ -91,6 +91,7 @@ const FAQItem = ({ faq, isOpen, onClick }) => {
 
 const FAQ = ({
     title = "FAQ's",
+    highlightWord = " ",
     description = "Find answers to common questions about WOF inspections, servicing, and vehicle repairs. If you need more information, our friendly team is always happy to help.",
     faqs = defaultFaqs
 }) => {
@@ -98,6 +99,11 @@ const FAQ = ({
     const sectionRef = useRef(null);
     const titleRef = useRef(null);
     const listRef = useRef(null);
+
+    const parts = highlightWord && title.includes(highlightWord) ? title.split(highlightWord) : [title];
+    const titleContent = parts.length > 1
+        ? parts.flatMap((part, i) => (i < parts.length - 1 ? [part, <span key={i} className={styles.highlight}>{highlightWord}</span>] : [part]))
+        : title;
 
     useEffect(() => {
         const ctx = gsap.context(() => {
@@ -123,7 +129,7 @@ const FAQ = ({
         <section className={styles.faqSection} ref={sectionRef}>
             <div className={styles.container}>
                 <div className={styles.textContent} ref={titleRef}>
-                    <h2 className={styles.title}>{title}</h2>
+                    <h2 className={styles.title}>{titleContent}</h2>
                     <p className={styles.description}>{description}</p>
                 </div>
 

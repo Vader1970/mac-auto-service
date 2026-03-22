@@ -15,10 +15,18 @@ const features = [
     "Friendly, Reliable Service"
 ];
 
-const WhyChooseUs = () => {
+const WhyChooseUs = ({
+    title = 'Why choose Mac Auto Services?',
+    highlightWord = ' '
+}) => {
     const sectionRef = useRef(null);
     const textRef = useRef(null);
     const imageRef = useRef(null);
+
+    const parts = highlightWord && title.includes(highlightWord) ? title.split(highlightWord) : [title];
+    const titleContent = parts.length > 1
+        ? parts.flatMap((part, i) => (i < parts.length - 1 ? [part, <span key={i} className={styles.highlight}>{highlightWord}</span>] : [part]))
+        : title;
 
     useEffect(() => {
         const ctx = gsap.context(() => {
@@ -62,7 +70,7 @@ const WhyChooseUs = () => {
             <div className={styles.container}>
 
                 <div className={styles.textContent} ref={textRef}>
-                    <h2 className={styles.title}>Why choose Mac Auto Services?</h2>
+                    <h2 className={styles.title}>{titleContent}</h2>
 
                     <p className={styles.description}>
                         We've been repairing and servicing vehicles for over 30 years, and we still believe in doing things the right way. Honest advice, fair pricing, and quality work you can rely on — that's what keeps our customers coming back.

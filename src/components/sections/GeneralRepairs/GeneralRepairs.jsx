@@ -59,7 +59,7 @@ const GeneralRepairs = () => {
                     </p>
 
                     <p className={styles.description}>
-                        We work on cars, motorbikes, trailers, and light trucks. Whether you need a quick fix or a more involved repair, we provide clear explanations, honest advice, and quality workmanship. Your safety and your vehicle's dependability are our priorities.
+                        We work on cars, motorhomes, trailers, and light trucks. Whether you need a quick fix or a more involved repair, we provide clear explanations, honest advice, and quality workmanship. Your safety and your vehicle's dependability are our priorities.
                     </p>
 
                     <p className={styles.description}>

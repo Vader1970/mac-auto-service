@@ -25,6 +25,10 @@
     margin-bottom: 20px;
 }
 
+.highlight {
+    color: var(--color-primary);
+}
+
 .description {
     font-size: 1.05rem;
     line-height: 1.5;

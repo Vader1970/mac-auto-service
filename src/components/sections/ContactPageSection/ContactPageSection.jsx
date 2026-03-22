@@ -7,10 +7,18 @@ import ContactForm from '../../ContactForm/ContactForm';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const ContactPageSection = () => {
+const ContactPageSection = ({
+    title = 'Book Your Vehicle In Today',
+    highlightWord = ' ',
+}) => {
     const sectionRef = useRef(null);
     const formRef = useRef(null);
     const cardRef = useRef(null);
+
+    const parts = highlightWord && title.includes(highlightWord) ? title.split(highlightWord) : [title];
+    const titleContent = parts.length > 1
+        ? parts.flatMap((part, i) => (i < parts.length - 1 ? [part, <span key={i} className={styles.highlight}>{highlightWord}</span>] : [part]))
+        : title;
 
     useEffect(() => {
         const ctx = gsap.context(() => {
@@ -34,7 +42,7 @@ const ContactPageSection = () => {
 
                 {/* Left Side: Form and Map */}
                 <div className={styles.formContainer} ref={formRef}>
-                    <h2 className={styles.title}>Book Your Vehicle In Today</h2>
+                    <h2 className={styles.title}>{titleContent}</h2>
                     <p className={styles.description}>
                         Come in and have a chat to the friendly team at Mac Auto Services. Regardless of whether you just need an oil top up a tyre change, or just simply need to ask us a question we can help.
                     </p>
