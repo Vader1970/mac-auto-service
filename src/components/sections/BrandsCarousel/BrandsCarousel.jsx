@@ -9,12 +9,12 @@ import kumho from '../../../assets/images/kumho.png';
 import bendix from '../../../assets/images/bendix.png';
 
 const logos = [
-    { src: penrite, alt: 'Penrite' },
-    { src: ryco, alt: 'Ryco' },
-    { src: monroe, alt: 'Monroe' },
-    { src: gates, alt: 'Gates' },
-    { src: kumho, alt: 'Kumho' },
-    { src: bendix, alt: 'Bendix' }
+    { src: penrite, alt: 'Penrite oils and lubricants logo' },
+    { src: ryco, alt: 'Ryco filters logo' },
+    { src: monroe, alt: 'Monroe shock absorbers logo' },
+    { src: gates, alt: 'Gates belts and hoses logo' },
+    { src: kumho, alt: 'Kumho tyres logo' },
+    { src: bendix, alt: 'Bendix brakes logo' },
 ];
 
 const BrandsCarousel = () => {
@@ -34,7 +34,7 @@ const BrandsCarousel = () => {
                         </div>
                         <div className={styles.logoSet} aria-hidden="true">
                             {logos.map((logo, index) => (
-                                <img key={`logo-2-${index}`} src={logo.src} alt={logo.alt} className={styles.logo} />
+                                <img key={`logo-2-${index}`} src={logo.src} alt="" className={styles.logo} />
                             ))}
                         </div>
                     </div>

@@ -62,7 +62,7 @@ const AboutIntroducingUs = () => {
                 <div className={styles.cardsContainer} ref={cardsRef}>
                     {/* Chris Card */}
                     <div className={styles.card}>
-                        <img src={chrisImg} alt="Chris Low" className={styles.cardImage} />
+                        <img src={chrisImg} alt="Portrait of Chris Low, owner and head mechanic" className={styles.cardImage} />
                         <h3 className={styles.cardName}>Chris Low</h3>
                         <p className={styles.cardRole}>Owner/Mechanic</p>
                         <p className={styles.cardText}>
@@ -72,7 +72,7 @@ const AboutIntroducingUs = () => {
 
                     {/* Megan Card */}
                     <div className={styles.card}>
-                        <img src={meganImg} alt="Megan Low" className={styles.cardImage} />
+                        <img src={meganImg} alt="Portrait of Megan Low, owner and administrator" className={styles.cardImage} />
                         <h3 className={styles.cardName}>Megan Low</h3>
                         <p className={styles.cardRole}>Owner/Administrator</p>
                         <p className={styles.cardText}>

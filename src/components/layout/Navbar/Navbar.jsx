@@ -2,7 +2,8 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import gsap from 'gsap';
 import styles from './Navbar.module.css';
-import logoImg from '../../../assets/images/logo-mac-auto-services.png';
+import logoSrcset from '../../../assets/images/logo-mac-auto-services.png?w=150;300&format=webp&quality=92&as=srcset';
+import logoImg from '../../../assets/images/logo-mac-auto-services.png?w=300&format=webp&quality=92';
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -10,6 +11,8 @@ const Navbar = () => {
     const navbarRef = useRef(null);
     const mobileMenuRef = useRef(null);
     const lastScrollY = useRef(0);
+    const navHiddenRef = useRef(false);
+    const navElevatedRef = useRef(false);
     const isMenuOpenRef = useRef(isMenuOpen);
     const location = useLocation();
 
@@ -34,26 +37,56 @@ const Navbar = () => {
     }, [isMenuOpen]);
 
     useEffect(() => {
+        let rafId = null;
+        const shadowOn = '0 2px 10px rgba(0,0,0,0.1)';
+        const shadowOff = '0 0px 0px rgba(0,0,0,0)';
+
         const handleScroll = () => {
-            const currentScrollY = window.scrollY;
+            if (rafId !== null) return;
+            rafId = requestAnimationFrame(() => {
+                rafId = null;
+                const el = navbarRef.current;
+                if (!el) return;
 
-            // Scroll direction logic
-            if (currentScrollY > lastScrollY.current && currentScrollY > 100) {
-                // Scrolling down - hide navbar
-                gsap.to(navbarRef.current, { yPercent: -100, duration: 0.3 });
-            } else {
-                // Scrolling up or at the top - show navbar
-                if (currentScrollY > 50) {
-                    gsap.to(navbarRef.current, { yPercent: 0, boxShadow: '0 2px 10px rgba(0,0,0,0.1)', padding: '20px 0', duration: 0.3 });
+                const currentScrollY = window.scrollY;
+                const prevY = lastScrollY.current;
+                const goingDown = currentScrollY > prevY;
+                lastScrollY.current = currentScrollY;
+
+                if (goingDown && currentScrollY > 100) {
+                    if (!navHiddenRef.current) {
+                        navHiddenRef.current = true;
+                        gsap.to(el, { yPercent: -100, duration: 0.3 });
+                    }
                 } else {
-                    gsap.to(navbarRef.current, { yPercent: 0, boxShadow: '0 0px 0px rgba(0,0,0,0)', padding: '20px 0', duration: 0.3 });
+                    const elevated = currentScrollY > 50;
+                    if (navHiddenRef.current) {
+                        navHiddenRef.current = false;
+                        navElevatedRef.current = elevated;
+                        gsap.to(el, {
+                            yPercent: 0,
+                            boxShadow: elevated ? shadowOn : shadowOff,
+                            padding: '20px 0',
+                            duration: 0.3,
+                        });
+                    } else if (elevated !== navElevatedRef.current) {
+                        navElevatedRef.current = elevated;
+                        gsap.to(el, {
+                            yPercent: 0,
+                            boxShadow: elevated ? shadowOn : shadowOff,
+                            padding: '20px 0',
+                            duration: 0.3,
+                        });
+                    }
                 }
-            }
-
-            lastScrollY.current = currentScrollY;
+            });
         };
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
+
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+            if (rafId !== null) cancelAnimationFrame(rafId);
+        };
     }, []);
 
     const toggleMenu = () => {
@@ -87,7 +120,16 @@ const Navbar = () => {
             <div className={styles.container}>
                 <div className={styles.logo}>
                     <Link to="/">
-                        <img src={logoImg} alt="Mac Auto Services Logo" className={styles.logoImage} />
+                        <img
+                            src={logoImg}
+                            srcSet={logoSrcset}
+                            sizes="150px"
+                            alt="Mac Auto Services — Christchurch mechanic and WOF"
+                            className={styles.logoImage}
+                            width={150}
+                            height={57}
+                            decoding="async"
+                        />
                     </Link>
                 </div>
 

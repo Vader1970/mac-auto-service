@@ -2,7 +2,8 @@ import React, { useRef, useEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import styles from './ContactPageSection.module.css';
-import chrisImg from '../../../assets/images/chris.png';
+import chrisSrcset from '../../../assets/images/chris.png?w=480;720;960&format=webp&quality=85&as=srcset';
+import chrisImg from '../../../assets/images/chris.png?w=720&format=webp&quality=85';
 import ContactForm from '../../ContactForm/ContactForm';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -54,7 +55,17 @@ const ContactPageSection = ({
 
                 {/* Right Side: Contact Card */}
                 <div className={styles.cardContainer} ref={cardRef}>
-                    <img src={chrisImg} alt="Chris from Mac Auto Services" className={styles.cardImage} />
+                    <img
+                        src={chrisImg}
+                        srcSet={chrisSrcset}
+                        sizes="(max-width: 992px) 100vw, 480px"
+                        alt="Chris Low, owner and lead mechanic at Mac Auto Services"
+                        className={styles.cardImage}
+                        loading="lazy"
+                        decoding="async"
+                        width={480}
+                        height={300}
+                    />
 
                     <div className={styles.cardContent}>
                         <h3 className={styles.cardTitle}>Get In Touch</h3>

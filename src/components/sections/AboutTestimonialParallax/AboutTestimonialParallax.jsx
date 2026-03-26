@@ -39,9 +39,19 @@ const AboutTestimonialParallax = () => {
 
             <div className={styles.container} ref={contentRef}>
                 <div className={styles.card}>
-                    <div className={styles.starsWrapper}>
+                    <div
+                        className={styles.starsWrapper}
+                        role="img"
+                        aria-label="5 out of 5 star rating"
+                    >
                         {[...Array(5)].map((_, i) => (
-                            <img key={i} src={starImg} alt="Gold Star" className={styles.starsIcon} />
+                            <img
+                                key={i}
+                                src={starImg}
+                                alt=""
+                                aria-hidden="true"
+                                className={styles.starsIcon}
+                            />
                         ))}
                     </div>
                     <p className={styles.reviewText}>

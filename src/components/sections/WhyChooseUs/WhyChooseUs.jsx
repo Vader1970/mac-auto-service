@@ -4,7 +4,8 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Link } from 'react-router-dom';
 import styles from './WhyChooseUs.module.css';
 
-import ChrisServicing from '../../../assets/images/chris-service.webp';
+import chrisSrcset from '../../../assets/images/chris-service.webp?w=640;960;1200&format=webp&quality=75&as=srcset';
+import ChrisServicing from '../../../assets/images/chris-service.webp?w=960&format=webp&quality=75';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -92,7 +93,17 @@ const WhyChooseUs = ({
 
                 <div className={styles.imageContent} ref={imageRef}>
                     <div className={styles.imageWrapper}>
-                        <img src={ChrisServicing} alt="Chris working under car on hoist" className={styles.image} />
+                        <img
+                            src={ChrisServicing}
+                            srcSet={chrisSrcset}
+                            sizes="(max-width: 992px) 100vw, 50vw"
+                            alt="Mechanic working beneath a raised vehicle on a workshop hoist at Mac Auto Services"
+                            className={styles.image}
+                            loading="lazy"
+                            decoding="async"
+                            width={1200}
+                            height={900}
+                        />
                         <div className={styles.overlay}></div>
                     </div>
                 </div>

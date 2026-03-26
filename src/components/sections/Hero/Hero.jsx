@@ -4,6 +4,9 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Link } from 'react-router-dom';
 import styles from './Hero.module.css';
 
+import heroDefaultSrcset from '../../../assets/images/hero-new.webp?w=750;1400;1920&format=webp&quality=78&as=srcset';
+import heroDefaultSrc from '../../../assets/images/hero-new.webp?w=1400&format=webp&quality=78';
+
 gsap.registerPlugin(ScrollTrigger);
 
 const defaultContent = {
@@ -13,7 +16,17 @@ const defaultContent = {
     ctaLink: '/services',
 };
 
-const Hero = ({ imageSrc, title, description, ctaText, ctaLink, short: isShort, backgroundPositionMobile }) => {
+const Hero = ({
+    imageSrc,
+    imageSrcSet,
+    imageSizes = '100vw',
+    title,
+    description,
+    ctaText,
+    ctaLink,
+    short: isShort,
+    backgroundPositionMobile,
+}) => {
     const heroRef = useRef(null);
     const titleRef = useRef(null);
     const textRef = useRef(null);
@@ -29,6 +42,9 @@ const Hero = ({ imageSrc, title, description, ctaText, ctaLink, short: isShort, 
         ctaText: ctaText ?? defaultContent.ctaText,
         ctaLink: ctaLink ?? defaultContent.ctaLink,
     };
+
+    const bgSrc = imageSrc ?? heroDefaultSrc;
+    const bgSrcSet = imageSrc ? imageSrcSet : heroDefaultSrcset;
 
     useEffect(() => {
         const ctx = gsap.context(() => {
@@ -66,16 +82,23 @@ const Hero = ({ imageSrc, title, description, ctaText, ctaLink, short: isShort, 
 
     const titleOnly = !hasDescription && !hasCta;
 
-    const mobileBgClass = backgroundPositionMobile === 'right' ? styles.bgRightMobile : 
-                          backgroundPositionMobile === 'left' ? styles.bgLeftMobile : 
-                          backgroundPositionMobile === 'center' ? styles.bgCenterMobile : '';
+    const mobileBgClass = backgroundPositionMobile === 'right' ? styles.bgRightMobile :
+        backgroundPositionMobile === 'left' ? styles.bgLeftMobile :
+            backgroundPositionMobile === 'center' ? styles.bgCenterMobile : '';
 
     return (
         <section className={`${styles.hero} ${titleOnly ? styles.titleOnly : ''} ${isShort ? styles.heroShort : ''} ${mobileBgClass}`} ref={heroRef}>
-            <div
-                className={styles.background}
-                style={imageSrc ? { backgroundImage: `url(${imageSrc})` } : undefined}
-            >
+            <div className={styles.media}>
+                <img
+                    className={styles.heroBgImg}
+                    src={bgSrc}
+                    srcSet={bgSrcSet}
+                    sizes={imageSizes}
+                    fetchPriority="high"
+                    decoding="async"
+                    alt=""
+                    aria-hidden="true"
+                />
                 <div className={styles.overlay}></div>
             </div>
             <div className={styles.container}>

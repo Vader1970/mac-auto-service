@@ -54,7 +54,7 @@ const AboutWhoWeAre = () => {
                 <div className={styles.contentWrapper}>
                     <div className={styles.imageContent} ref={imageRef}>
                         <div className={styles.imageWrapper}>
-                            <img src={shopFrontImg} alt="Mac Auto Services Shop Front" className={styles.image} />
+                            <img src={shopFrontImg} alt="Street view of the Mac Auto Services workshop entrance in Bromley, Christchurch" className={styles.image} />
                         </div>
                         <p className={styles.caption}>*Established in 2018*</p>
                     </div>

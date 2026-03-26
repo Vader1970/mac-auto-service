@@ -6,7 +6,8 @@ import ServicingIntro from '../../components/sections/ServicingIntro/ServicingIn
 import ServicingParallax from '../../components/sections/ServicingParallax/ServicingParallax';
 import FAQ from '../../components/sections/FAQ/FAQ';
 import ContactPageSection from '../../components/sections/ContactPageSection/ContactPageSection';
-import servicingHeroImg from '../../assets/images/mac-servicing.jpg';
+import servicingHeroSrcset from '../../assets/images/mac-servicing.jpg?w=800;1200;1600&format=webp&quality=80&as=srcset';
+import servicingHeroImg from '../../assets/images/mac-servicing.jpg?w=1200&format=webp&quality=80';
 
 const servicingFaqs = [
     {
@@ -58,6 +59,7 @@ const Servicing = () => {
         <div className="servicing-page">
             <Hero
                 imageSrc={servicingHeroImg}
+                imageSrcSet={servicingHeroSrcset}
                 title="Servicing"
                 short
             />

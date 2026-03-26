@@ -6,7 +6,8 @@ import GeneralRepairs from '../../components/sections/GeneralRepairs/GeneralRepa
 import RepairsCTA from '../../components/sections/RepairsCTA/RepairsCTA';
 import RepairServicesWeOffer from '../../components/sections/RepairServicesWeOffer/RepairServicesWeOffer';
 import ContactPageSection from '../../components/sections/ContactPageSection/ContactPageSection';
-import repairsHeroImg from '../../assets/images/repairs-hero.webp';
+import repairsHeroSrcset from '../../assets/images/repairs-hero.webp?w=800;1200;1600&format=webp&quality=80&as=srcset';
+import repairsHeroImg from '../../assets/images/repairs-hero.webp?w=1200&format=webp&quality=80';
 
 const Repairs = () => {
     useEffect(() => {
@@ -35,6 +36,7 @@ const Repairs = () => {
         <div className="repairs-page">
             <Hero
                 imageSrc={repairsHeroImg}
+                imageSrcSet={repairsHeroSrcset}
                 title="Repairs"
                 short
                 backgroundPositionMobile="left"

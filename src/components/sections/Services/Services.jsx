@@ -4,27 +4,42 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import styles from './Services.module.css';
 
-import wofImg from '../../../assets/images/mac-wof.jpg';
-import repairsImg from '../../../assets/images/mac-repairs.jpg';
-import servicingImg from '../../../assets/images/mac-servicing.jpg';
+import wofSrcset from '../../../assets/images/mac-wof.jpg?w=640;960;1280&format=webp&quality=80&as=srcset';
+import wofImg from '../../../assets/images/mac-wof.jpg?w=960&format=webp&quality=80';
+import repairsSrcset from '../../../assets/images/mac-repairs.jpg?w=640;960;1280&format=webp&quality=80&as=srcset';
+import repairsImg from '../../../assets/images/mac-repairs.jpg?w=960&format=webp&quality=80';
+import servicingSrcset from '../../../assets/images/mac-servicing.jpg?w=640;960;1280&format=webp&quality=80&as=srcset';
+import servicingImg from '../../../assets/images/mac-servicing.jpg?w=960&format=webp&quality=80';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const servicesData = [
     {
         title: 'WOF',
-        image: wofImg,
-        link: '/services/wof'
+        imageAlt: 'Mechanic carrying out a Warrant of Fitness inspection at Mac Auto Services',
+        imageSrc: wofImg,
+        imageSrcset: wofSrcset,
+        link: '/services/wof',
+        width: 1024,
+        height: 764,
     },
     {
         title: 'Repairs',
-        image: repairsImg,
-        link: '/services/repairs'
+        imageAlt: 'Vehicle repair work in the Mac Auto Services workshop',
+        imageSrc: repairsImg,
+        imageSrcset: repairsSrcset,
+        link: '/services/repairs',
+        width: 787,
+        height: 838,
     },
     {
         title: 'Servicing',
-        image: servicingImg,
-        link: '/services/servicing'
+        imageAlt: 'Vehicle being serviced at Mac Auto Services',
+        imageSrc: servicingImg,
+        imageSrcset: servicingSrcset,
+        link: '/services/servicing',
+        width: 785,
+        height: 837,
     }
 ];
 
@@ -124,7 +139,17 @@ const Services = ({
                             ref={el => cardsRef.current[index] = el}
                         >
                             <div className={styles.cardImageWrapper}>
-                                <img src={service.image} alt={service.title} className={styles.cardImage} />
+                                <img
+                                    src={service.imageSrc}
+                                    srcSet={service.imageSrcset}
+                                    sizes="(max-width: 768px) 100vw, (max-width: 992px) 50vw, 33vw"
+                                    alt={service.imageAlt ?? `Mac Auto Services — ${service.title}`}
+                                    className={styles.cardImage}
+                                    loading="lazy"
+                                    decoding="async"
+                                    width={service.width ?? 800}
+                                    height={service.height ?? 600}
+                                />
                                 <div className={styles.overlay}></div>
                             </div>
 
