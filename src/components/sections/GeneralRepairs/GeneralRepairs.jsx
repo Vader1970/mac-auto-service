@@ -3,7 +3,8 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import styles from './GeneralRepairs.module.css';
 
-import repairsSectionImg from '../../../assets/images/car-trouble.webp';
+import repairsSectionSrcset from '../../../assets/images/car-trouble.webp?w=640;960;1200&format=webp&quality=80&as=srcset';
+import repairsSectionImg from '../../../assets/images/car-trouble.webp?w=960&format=webp&quality=80';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -80,7 +81,17 @@ const GeneralRepairs = () => {
 
                 <div className={styles.imageContent} ref={imageRef}>
                     <div className={styles.imageWrapper}>
-                        <img src={repairsSectionImg} alt="Mechanic with vehicle - Mac Auto Services" className={styles.image} />
+                        <img
+                            src={repairsSectionImg}
+                            srcSet={repairsSectionSrcset}
+                            sizes="(max-width: 992px) 100vw, 50vw"
+                            alt="Mechanic inspecting a vehicle engine bay at Mac Auto Services"
+                            className={styles.image}
+                            loading="lazy"
+                            decoding="async"
+                            width={960}
+                            height={640}
+                        />
                     </div>
                 </div>
 

@@ -7,7 +7,8 @@ import BrandsCarousel from '../../components/sections/BrandsCarousel/BrandsCarou
 import AboutIntroducingUs from '../../components/sections/AboutIntroducingUs/AboutIntroducingUs';
 import AboutTestimonialParallax from '../../components/sections/AboutTestimonialParallax/AboutTestimonialParallax';
 import ContactPageSection from '../../components/sections/ContactPageSection/ContactPageSection';
-import aboutUsHeroImg from '../../assets/images/about-us.webp';
+import aboutUsHeroSrcset from '../../assets/images/about-us.webp?w=800;1200;1600&format=webp&quality=80&as=srcset';
+import aboutUsHeroImg from '../../assets/images/about-us.webp?w=1200&format=webp&quality=80';
 
 const About = () => {
     useEffect(() => {
@@ -36,6 +37,7 @@ const About = () => {
         <div className="about-page">
             <Hero
                 imageSrc={aboutUsHeroImg}
+                imageSrcSet={aboutUsHeroSrcset}
                 title="About Us"
                 short
                 backgroundPositionMobile="right"

@@ -4,7 +4,8 @@ import Hero from '../../components/sections/Hero/Hero';
 import AfterpayBanner from '../../components/sections/AfterpayBanner/AfterpayBanner';
 import ServicesSection from '../../components/sections/Services/Services';
 import ContactPageSection from '../../components/sections/ContactPageSection/ContactPageSection';
-import oilChangeImg from '../../assets/images/services-hero.jpg';
+import oilChangeSrcset from '../../assets/images/services-hero.jpg?w=800;1200;1600&format=webp&quality=80&as=srcset';
+import oilChangeImg from '../../assets/images/services-hero.jpg?w=1200&format=webp&quality=80';
 
 const Services = () => {
     useEffect(() => {
@@ -33,6 +34,7 @@ const Services = () => {
         <div className="services-page">
             <Hero
                 imageSrc={oilChangeImg}
+                imageSrcSet={oilChangeSrcset}
                 title="Our Services"
                 short
             />

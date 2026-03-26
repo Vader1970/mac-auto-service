@@ -3,7 +3,8 @@ import { CONTACT_PAGE_DESCRIPTION, CONTACT_PAGE_TITLE, SITE_TITLE } from '../../
 import Hero from '../../components/sections/Hero/Hero';
 import AfterpayBanner from '../../components/sections/AfterpayBanner/AfterpayBanner';
 import ContactPageSection from '../../components/sections/ContactPageSection/ContactPageSection';
-import contactHeroImg from '../../assets/images/contact-us.webp';
+import contactHeroSrcset from '../../assets/images/contact-us.webp?w=800;1200;1600&format=webp&quality=80&as=srcset';
+import contactHeroImg from '../../assets/images/contact-us.webp?w=1200&format=webp&quality=80';
 
 const Contact = () => {
     useEffect(() => {
@@ -32,6 +33,7 @@ const Contact = () => {
         <div className="contact-page">
             <Hero
                 imageSrc={contactHeroImg}
+                imageSrcSet={contactHeroSrcset}
                 title="Contact Us"
                 short
             />

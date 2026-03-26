@@ -1,13 +1,24 @@
 import { Link } from 'react-router-dom';
 import styles from './Footer.module.css';
-import whiteLogo from '../../../assets/images/white-logo.png';
+import whiteLogoSrcset from '../../../assets/images/white-logo.png?w=200;400&format=webp&quality=92&as=srcset';
+import whiteLogo from '../../../assets/images/white-logo.png?w=400&format=webp&quality=92';
 
 const Footer = () => {
     return (
         <footer className={styles.footer}>
             <div className={styles.container}>
                 <div className={styles.column}>
-                    <img src={whiteLogo} alt="Mac Auto Services Logo" className={styles.logoImage} />
+                    <img
+                        src={whiteLogo}
+                        srcSet={whiteLogoSrcset}
+                        sizes="200px"
+                        alt="Mac Auto Services wordmark"
+                        className={styles.logoImage}
+                        width={200}
+                        height={76}
+                        loading="lazy"
+                        decoding="async"
+                    />
                     <p>Unit 1&2/56 Wickham Street,<br />Christchurch 8062,<br />Bromley</p>
                 </div>
                 <div className={styles.column}>

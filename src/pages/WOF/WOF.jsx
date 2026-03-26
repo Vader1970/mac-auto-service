@@ -6,7 +6,8 @@ import WOFInspections from '../../components/sections/WOFInspections/WOFInspecti
 import ServicesThatKeepYouMoving from '../../components/sections/ServicesThatKeepYouMoving/ServicesThatKeepYouMoving';
 import FAQ from '../../components/sections/FAQ/FAQ';
 import ContactPageSection from '../../components/sections/ContactPageSection/ContactPageSection';
-import wofHeroImg from '../../assets/images/wof-hero.jpg';
+import wofHeroSrcset from '../../assets/images/wof-hero.jpg?w=800;1200;1600&format=webp&quality=80&as=srcset';
+import wofHeroImg from '../../assets/images/wof-hero.jpg?w=1200&format=webp&quality=80';
 
 const wofFaqs = [
     {
@@ -62,6 +63,7 @@ const WOF = () => {
         <div className="wof-page">
             <Hero
                 imageSrc={wofHeroImg}
+                imageSrcSet={wofHeroSrcset}
                 title="Warrant of Fitness (WOF)"
                 short
             />

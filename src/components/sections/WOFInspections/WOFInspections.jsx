@@ -3,7 +3,8 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import styles from './WOFInspections.module.css';
 
-import wofInspectionsImg from '../../../assets/images/mac-wof.jpg';
+import wofInspectionsSrcset from '../../../assets/images/mac-wof.jpg?w=640;960;1200&format=webp&quality=80&as=srcset';
+import wofInspectionsImg from '../../../assets/images/mac-wof.jpg?w=960&format=webp&quality=80';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -80,7 +81,17 @@ const WOFInspections = () => {
 
                 <div className={styles.imageContent} ref={imageRef}>
                     <div className={styles.imageWrapper}>
-                        <img src={wofInspectionsImg} alt="WOF inspection - mechanic with clipboard" className={styles.image} />
+                        <img
+                            src={wofInspectionsImg}
+                            srcSet={wofInspectionsSrcset}
+                            sizes="(max-width: 992px) 100vw, 50vw"
+                            alt="Inspector with clipboard during a Warrant of Fitness check at Mac Auto Services"
+                            className={styles.image}
+                            loading="lazy"
+                            decoding="async"
+                            width={1024}
+                            height={764}
+                        />
                     </div>
                 </div>
 
