@@ -15,7 +15,7 @@ const Footer = () => {
                         alt="Mac Auto Services wordmark"
                         className={styles.logoImage}
                         width={200}
-                        height={76}
+                        height={65}
                         loading="lazy"
                         decoding="async"
                     />

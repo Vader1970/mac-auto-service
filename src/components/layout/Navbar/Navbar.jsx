@@ -127,7 +127,7 @@ const Navbar = () => {
                             alt="Mac Auto Services — Christchurch mechanic and WOF"
                             className={styles.logoImage}
                             width={150}
-                            height={57}
+                            height={49}
                             decoding="async"
                         />
                     </Link>

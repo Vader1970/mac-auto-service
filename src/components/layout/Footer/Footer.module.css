@@ -14,9 +14,12 @@
 }
 
 .column .logoImage {
-    max-width: 200px;
-    margin-bottom: 20px;
+    width: 200px;
+    max-width: 100%;
     height: auto;
+    aspect-ratio: 200 / 65;
+    margin-bottom: 20px;
+    display: block;
 }
 
 .column h4 {
