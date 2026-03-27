@@ -29,12 +29,12 @@ const BrandsCarousel = () => {
                     <div className={styles.track}>
                         <div className={styles.logoSet}>
                             {logos.map((logo, index) => (
-                                <img key={`logo-1-${index}`} src={logo.src} alt={logo.alt} className={styles.logo} />
+                                <img key={`logo-1-${index}`} src={logo.src} alt={logo.alt} className={styles.logo} width="160" height="80" loading="lazy" decoding="async" />
                             ))}
                         </div>
                         <div className={styles.logoSet} aria-hidden="true">
                             {logos.map((logo, index) => (
-                                <img key={`logo-2-${index}`} src={logo.src} alt="" className={styles.logo} />
+                                <img key={`logo-2-${index}`} src={logo.src} alt="" className={styles.logo} width="160" height="80" loading="lazy" decoding="async" aria-hidden="true" />
                             ))}
                         </div>
                     </div>

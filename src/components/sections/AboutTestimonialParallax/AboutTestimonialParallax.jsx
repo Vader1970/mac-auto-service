@@ -51,7 +51,10 @@ const AboutTestimonialParallax = () => {
                                 alt=""
                                 aria-hidden="true"
                                 className={styles.starsIcon}
-                            />
+                                width="24"
+                                height="24"
+                                loading="lazy"
+                                />
                         ))}
                     </div>
                     <p className={styles.reviewText}>

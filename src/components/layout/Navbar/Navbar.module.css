@@ -27,9 +27,11 @@
 }
 
 .logoImage {
-    height: 57px;
-    /* Adjust height based on the logo proportions */
-    width: auto;
+    height: 49px;
+    width: 150px;
+    max-width: 100%;
+    aspect-ratio: 150 / 49;
+    object-fit: contain;
     display: block;
 }
 

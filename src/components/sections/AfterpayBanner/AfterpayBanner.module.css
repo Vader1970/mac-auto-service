@@ -42,7 +42,8 @@
 
 .afterpaySvg {
     height: 20px;
-    width: auto;
+    width: 90.9px;
+    aspect-ratio: 50 / 11;
     fill: #EFEB14;
 }
 
