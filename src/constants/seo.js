@@ -1,44 +1,68 @@
-/** Default tab title when not on a page with its own SEO (e.g. home). */
+/**
+ * Default browser tab title — shown when no page-specific title applies.
+ * Also used as brand suffix reference across page titles.
+ */
 export const SITE_TITLE = 'Mac Auto Services';
 
+// ─── Home ────────────────────────────────────────────────────────────────────
+// 49 chars
 export const HOME_PAGE_TITLE =
-    'Christchurch WOF services, repairs & maintenance';
+  'Mac Auto Services | Christchurch Mechanic & WOF';
 
+// 147 chars
 export const HOME_PAGE_DESCRIPTION =
-    'Christchurch mechanic with 30+ years of experience offering WOF, repairs, and servicing for all car makes, models, trailers, and light trucks.';
+  'Christchurch mechanic with 30+ years experience. WOF inspections, car servicing, and repairs for all makes, models, trailers, and light trucks.';
 
+// ─── About ───────────────────────────────────────────────────────────────────
+// 48 chars
 export const ABOUT_PAGE_TITLE =
-    "Automotive Services in Christchurch | WOF's | Repairs & Maintenance | Servicing";
+  'About Mac Auto Services | Christchurch Mechanic';
 
+// 154 chars
 export const ABOUT_PAGE_DESCRIPTION =
-    'Christchurch mechanic offering WOFs, car servicing, and a full range of maintenance and repairs, including brakes, transmission, exhaust, and engine services. Pay with Afterpay!';
+  'Your local Christchurch mechanic. WOFs, servicing, brakes, transmission, exhaust, and engine repairs. Pay with Afterpay — no stress, no surprises.';
 
+// ─── Contact ─────────────────────────────────────────────────────────────────
+// 43 chars
 export const CONTACT_PAGE_TITLE =
-    'Contact Mac Auto Services for your next WOF, repair, service or maintenance';
+  'Contact Mac Auto Services | Christchurch';
 
+// 143 chars
 export const CONTACT_PAGE_DESCRIPTION =
-    'Contact us for affordable vehicle repairs, maintenance, WOFs, brake servicing, transmission repairs, air conditioning fixes, engine diagnostics, and more!';
+  'Book a WOF, service, or repair in Christchurch. We handle brakes, transmission, air conditioning, engine diagnostics, and more. Get in touch today.';
 
+// ─── Services ────────────────────────────────────────────────────────────────
+// 52 chars
 export const SERVICES_PAGE_TITLE =
-    'WOF | Warrant of Fitness | Car Repairs & maintenance | Servicing';
+  'Car Services Christchurch | WOF & Repairs | Mac Auto';
 
+// 152 chars
 export const SERVICES_PAGE_DESCRIPTION =
-    'Experienced Christchurch mechanic with 30+ years offering WOF, oil changes, brake service, transmission repairs, and more.';
+  'WOF inspections, oil changes, brake service, transmission repairs, and more in Christchurch. 30+ years experience. Book your next service today.';
 
+// ─── WOF ─────────────────────────────────────────────────────────────────────
+// 49 chars
 export const WOF_PAGE_TITLE =
-    'Warrant of Fitness (WOF) Christchurch | Book Your Inspection';
+  'WOF Christchurch | Warrant of Fitness | Mac Auto';
 
+// 154 chars
 export const WOF_PAGE_DESCRIPTION =
-    'Book a Warrant of Fitness inspection in Christchurch. NZTA-standard safety checks for brakes, tyres, lights, steering, and more. On-site repairs if needed, with rechecks so you can get back on the road.';
+  'Affordable Warrant of Fitness inspections in Christchurch. NZTA-standard checks for brakes, tyres, lights, and steering. On-site repairs and rechecks available.';
 
+// ─── Repairs ─────────────────────────────────────────────────────────────────
+// 53 chars
 export const REPAIRS_PAGE_TITLE =
-    'Car Repairs Christchurch | Brakes, Engine, Transmission & Diagnostics';
+  'Car Repairs Christchurch | Brakes & Engine | Mac Auto';
 
+// 154 chars
 export const REPAIRS_PAGE_DESCRIPTION =
-    'Mechanical repairs in Christchurch: brakes, transmission, exhaust, cooling, engine diagnostics, suspension, steering, and more. Straightforward pricing for cars, vans, utes, and light trucks.';
+  'Mechanical repairs in Christchurch for cars, vans, utes, and light trucks. Brakes, transmission, exhaust, cooling, suspension, and engine diagnostics.';
 
+// ─── Servicing ───────────────────────────────────────────────────────────────
+// 51 chars
 export const SERVICING_PAGE_TITLE =
-    'Vehicle Servicing Christchurch | Oil Changes & Scheduled Maintenance';
+  'Car Servicing Christchurch | Oil Changes | Mac Auto';
 
+// 152 chars
 export const SERVICING_PAGE_DESCRIPTION =
-    'Routine servicing and oil changes in Christchurch. Minor and major services, quality parts and oils, and warranty-safe work. Combine your WOF and service in one visit.';
+  'Minor and major car servicing in Christchurch. Oil changes, scheduled maintenance, and warranty-safe work. Combine your WOF and service in one visit.';
