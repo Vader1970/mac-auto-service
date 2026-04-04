@@ -96,8 +96,17 @@
 }
 
 .btnWrapper {
-    display: inline-block;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
     will-change: transform;
+}
+
+.ctaMicro {
+    margin-top: 10px;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.75);
+    letter-spacing: 0.01em;
 }
 
 .ctaBtn {
