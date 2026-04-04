@@ -13,7 +13,7 @@ const defaultContent = {
     title: 'Warrant of Fitness & Car Repairs in Christchurch',
     description: 'From Warrant of Fitness inspections and brake repairs to full engine rebuilds, we look after cars, motorhomes, trailers, and light trucks with straightforward advice and dependable service.',
     ctaText: 'Book Your Appointment Today',
-    ctaLink: '/services',
+    ctaLink: '#booking-form',
 };
 
 const Hero = ({
@@ -125,14 +125,29 @@ const Hero = ({
                     )}
                     {hasCta && (
                         <div ref={btnRef} className={styles.btnWrapper}>
-                            <Link
-                                to={content.ctaLink}
-                                className={`btn ${styles.ctaBtn}`}
-                                onMouseEnter={handleMouseEnter}
-                                onMouseLeave={handleMouseLeave}
-                            >
-                                {content.ctaText}
-                            </Link>
+                            {content.ctaLink.startsWith('#') ? (
+                                <a
+                                    href={content.ctaLink}
+                                    className={`btn ${styles.ctaBtn}`}
+                                    onMouseEnter={handleMouseEnter}
+                                    onMouseLeave={handleMouseLeave}
+                                    onClick={(e) => {
+                                        e.preventDefault();
+                                        document.querySelector(content.ctaLink)?.scrollIntoView({ behavior: 'smooth' });
+                                    }}
+                                >
+                                    {content.ctaText}
+                                </a>
+                            ) : (
+                                <Link
+                                    to={content.ctaLink}
+                                    className={`btn ${styles.ctaBtn}`}
+                                    onMouseEnter={handleMouseEnter}
+                                    onMouseLeave={handleMouseLeave}
+                                >
+                                    {content.ctaText}
+                                </Link>
+                            )}
                         </div>
                     )}
                     {isDefaultHero && (
