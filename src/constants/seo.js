@@ -7,11 +7,11 @@ export const SITE_TITLE = 'Mac Auto Services';
 // ─── Home ────────────────────────────────────────────────────────────────────
 // 49 chars
 export const HOME_PAGE_TITLE =
-  'Mac Auto Services | Christchurch Mechanic & WOF';
+  'Mac Auto Services | Christchurch Mechanic | WOF, Repairs & Servicing';
 
 // 147 chars
 export const HOME_PAGE_DESCRIPTION =
-  'Christchurch mechanic with 30+ years experience. WOF inspections, car servicing, and repairs for all makes, models, trailers, and light trucks.';
+  'Mac Auto Services — 30+ years serving Christchurch. WOF, servicing & repairs in Bromley. Afterpay accepted. Book online today.';
 
 // ─── About ───────────────────────────────────────────────────────────────────
 // 48 chars

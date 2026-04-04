@@ -11,7 +11,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const defaultContent = {
     title: 'Warrant of Fitness & Car Repairs in Christchurch',
-    description: 'From Warrant of Fitness inspections and brake repairs to full engine rebuilds, we look after cars, motorhomes, trailers, and light trucks with straightforward advice and dependable service.',
+    description: 'Cars, motorhomes, trailers and light trucks. From WOFs and brake repairs to full engine rebuilds.  Whatever your vehicle needs, we will tell you the cost before we touch it.',
     ctaText: 'View Our Services',
     ctaLink: '/services',
 };
