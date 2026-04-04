@@ -113,6 +113,18 @@ const Hero = ({
                     )}
                     {hasCta && (
                         <div ref={btnRef} className={styles.btnWrapper}>
+                            {isDefaultHero && (
+                                <a
+                                    href="https://www.google.com/maps/place/Mac+Auto+Services/@-43.5405,172.6895,17z"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className={styles.starRating}
+                                    aria-label="Mac Auto Services rated 4.9 out of 5 stars from 54 Google reviews in Christchurch"
+                                >
+                                    <span className={styles.stars} aria-hidden="true">★★★★★</span>
+                                    <span className={styles.ratingText}>4.9 / 5 &nbsp;·&nbsp; 54 Google reviews</span>
+                                </a>
+                            )}
                             <Link
                                 to={content.ctaLink}
                                 className={`btn ${styles.ctaBtn}`}
