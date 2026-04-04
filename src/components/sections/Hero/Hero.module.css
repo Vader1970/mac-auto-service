@@ -127,6 +127,12 @@
     white-space: nowrap;
 }
 
+.ctaMicro {
+    margin-top: 12px;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
 .ctaBtn {
     font-size: 1.05rem;
     padding: 14px 32px;

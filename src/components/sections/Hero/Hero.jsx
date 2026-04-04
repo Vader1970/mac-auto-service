@@ -135,6 +135,9 @@ const Hero = ({
                             </Link>
                         </div>
                     )}
+                    {isDefaultHero && (
+                        <p className={styles.ctaMicro}>Takes 30 seconds. We respond within 2 hours.</p>
+                    )}
                 </div>
             </div>
         </section>
