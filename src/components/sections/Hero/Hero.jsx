@@ -12,8 +12,8 @@ gsap.registerPlugin(ScrollTrigger);
 const defaultContent = {
     title: 'Warrant of Fitness & Car Repairs in Christchurch',
     description: 'From Warrant of Fitness inspections and brake repairs to full engine rebuilds, we look after cars, motorhomes, trailers, and light trucks with straightforward advice and dependable service.',
-    ctaText: 'View Our Services',
-    ctaLink: '/services',
+    ctaText: 'Book Your Appointment Today',
+    ctaLink: '#booking-form',
 };
 
 const Hero = ({
@@ -103,6 +103,18 @@ const Hero = ({
             </div>
             <div className={styles.container}>
                 <div className={styles.content}>
+                    {isDefaultHero && (
+                        <a
+                            href="https://www.google.com/maps/place/Mac+Auto+Services/@-43.5405,172.6895,17z"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={styles.starRating}
+                            aria-label="Mac Auto Services rated 4.9 out of 5 stars from 54 Google reviews in Christchurch"
+                        >
+                            <span className={styles.stars} aria-hidden="true">★★★★★</span>
+                            <span className={styles.ratingText}>4.9 / 5 &nbsp;·&nbsp; 54 Google reviews</span>
+                        </a>
+                    )}
                     <h1 className={styles.title}>
                         <span ref={titleRef} className={styles.titleLine}>{content.title}</span>
                     </h1>
@@ -113,15 +125,36 @@ const Hero = ({
                     )}
                     {hasCta && (
                         <div ref={btnRef} className={styles.btnWrapper}>
-                            <Link
-                                to={content.ctaLink}
-                                className={`btn ${styles.ctaBtn}`}
-                                onMouseEnter={handleMouseEnter}
-                                onMouseLeave={handleMouseLeave}
-                            >
-                                {content.ctaText}
-                            </Link>
+                            {content.ctaLink.startsWith('#') ? (
+                                <a
+                                    href={content.ctaLink}
+                                    className={`btn ${styles.ctaBtn}`}
+                                    onMouseEnter={handleMouseEnter}
+                                    onMouseLeave={handleMouseLeave}
+                                    onClick={(e) => {
+                                        e.preventDefault();
+                                        const el = document.querySelector(content.ctaLink);
+                                        if (el) {
+                                            window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY, behavior: 'smooth' });
+                                        }
+                                    }}
+                                >
+                                    {content.ctaText}
+                                </a>
+                            ) : (
+                                <Link
+                                    to={content.ctaLink}
+                                    className={`btn ${styles.ctaBtn}`}
+                                    onMouseEnter={handleMouseEnter}
+                                    onMouseLeave={handleMouseLeave}
+                                >
+                                    {content.ctaText}
+                                </Link>
+                            )}
                         </div>
+                    )}
+                    {isDefaultHero && (
+                        <p className={styles.ctaMicro}>Takes 30 seconds. We respond within 2 hours.</p>
                     )}
                 </div>
             </div>

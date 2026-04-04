@@ -100,6 +100,39 @@
     will-change: transform;
 }
 
+.starRating {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+    margin-bottom: 16px;
+}
+
+.starRating:hover {
+    opacity: 0.85;
+}
+
+.stars {
+    color: #FBBC04;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    line-height: 1;
+}
+
+.ratingText {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.9);
+    white-space: nowrap;
+}
+
+.ctaMicro {
+    margin-top: 12px;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
 .ctaBtn {
     font-size: 1.05rem;
     padding: 14px 32px;
