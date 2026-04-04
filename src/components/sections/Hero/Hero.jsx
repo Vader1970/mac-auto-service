@@ -133,7 +133,10 @@ const Hero = ({
                                     onMouseLeave={handleMouseLeave}
                                     onClick={(e) => {
                                         e.preventDefault();
-                                        document.querySelector(content.ctaLink)?.scrollIntoView({ behavior: 'smooth' });
+                                        const el = document.querySelector(content.ctaLink);
+                                        if (el) {
+                                            window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY, behavior: 'smooth' });
+                                        }
                                     }}
                                 >
                                     {content.ctaText}
